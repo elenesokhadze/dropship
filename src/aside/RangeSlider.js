@@ -1,11 +1,5 @@
-import {makeStyles} from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
-
-const useStyles = makeStyles({
- root: {
-  width: 223,
- },
-});
+import {SliderTextContainer, RangeContainer, RangeItem} from "./aside.styled";
 
 function valuetext(value) {
  return `${value}`;
@@ -17,11 +11,9 @@ export default function RangeSlider({
  value,
  handleChange,
 }) {
- const classes = useStyles();
-
  return (
-  <div className={classes.root}>
-   <div className="range-slider">{text}</div>
+  <div style={{width: "223px"}}>
+   <SliderTextContainer>{text}</SliderTextContainer>
    <Slider
     value={value}
     onChange={handleChange}
@@ -31,16 +23,16 @@ export default function RangeSlider({
     min={0}
     max={1000}
    />
-   <div className="range__container">
-    <div className="range range__min">
-     <div className="range__item range__item--small">$</div>
-     <div className="range__item ">{value[0]}</div>
+   <RangeContainer>
+    <div style={{display: "flex"}}>
+     <RangeItem isSmall>$</RangeItem>
+     <RangeItem>{value[0]}</RangeItem>
     </div>
-    <div className="range range__max">
-     <div className="range__item range__item--small">$</div>
-     <div className="range__item">{value[1]}</div>
+    <div style={{display: "flex"}}>
+     <RangeItem>$</RangeItem>
+     <RangeItem isSmall>{value[1]}</RangeItem>
     </div>
-   </div>
+   </RangeContainer>
   </div>
  );
 }

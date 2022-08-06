@@ -3,6 +3,7 @@ import RangeSlider from "./RangeSlider";
 import {filterProducts} from "../redux/products/ProductActions";
 import {useDispatch, useSelector} from "react-redux";
 import {PrimaryButton} from "../button/PrimaryButton";
+import {SliderOuterContainer, SliderInnerContainer} from "./aside.styled";
 
 const SliderContainer = () => {
  const products = useSelector((state) => state.product.products);
@@ -29,8 +30,8 @@ const SliderContainer = () => {
  };
 
  return (
-  <div className="button__container">
-   <div className="slider">
+  <SliderOuterContainer>
+   <SliderInnerContainer>
     <RangeSlider
      text="PRICE RANGE"
      handleFilterPrice={handleFilterPrice}
@@ -43,11 +44,13 @@ const SliderContainer = () => {
      value={value}
      handleChange={handleChange}
     />
-   </div>
-   <div className="button">
+   </SliderInnerContainer>
+   <div
+    style={{display: "flex", justifyContent: "center", alignItems: "center"}}
+   >
     <PrimaryButton onClick={resethandleFilterPrice}>reset filter</PrimaryButton>
    </div>
-  </div>
+  </SliderOuterContainer>
  );
 };
 

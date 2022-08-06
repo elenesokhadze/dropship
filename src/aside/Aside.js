@@ -1,55 +1,61 @@
-import "./aside.css";
 import SliderContainer from "./SliderContainer";
+import {
+ DropdownContainer,
+ DropdownOuterContainer,
+ AsideMenuContainer,
+ CategoryDropdownContainer,
+ AsideContainer,
+} from "./aside.styled.ts";
 
 const Aside = () => {
-  return (
-    <div className="aside__category">
-      <div className="dropdown">
-        <select className="category category--blue">
-          <option>Choose Niche</option>
-          <option value="electronics">Electronics</option>
-          <option value="jewelery">Jewelery</option>
-          <option value="men's clothing">Men's Clothing</option>
-          <option value="women's clothing">Women's Clothing</option>
-        </select>
-      </div>
-      <div className="dropdown">
-        <select className="category category--babyBlue">
-          <option>Choose Category</option>
-          <option>Australia</option>
-          <option>China</option>
-          <option>France</option>
-        </select>
-      </div>
-      <div className="aside__menu">
-        <div className="dropdown">
-          <select className="dropbtn">
-            <option>Ship From</option>
-            <option>Australia</option>
-            <option>China</option>
-            <option>France</option>
-          </select>
-        </div>
-        <div className="dropdown">
-          <select className="dropbtn">
-            <option>Ship To</option>
-            <option>Australia</option>
-            <option>China</option>
-            <option>France</option>
-          </select>
-        </div>
-        <div className="dropdown">
-          <select className="dropbtn">
-            <option>Select Supplier</option>
-            <option>Australia</option>
-            <option>China</option>
-            <option>France</option>
-          </select>
-        </div>
-      </div>
-      <SliderContainer />
-    </div>
-  );
+ return (
+  <AsideContainer>
+   <DropdownOuterContainer>
+    <CategoryDropdownContainer>
+     <option>Choose Niche</option>
+     <option value="electronics">Electronics</option>
+     <option value="jewelery">Jewelery</option>
+     <option value="men's clothing">Men's Clothing</option>
+     <option value="women's clothing">Women's Clothing</option>
+    </CategoryDropdownContainer>
+   </DropdownOuterContainer>
+   <DropdownOuterContainer>
+    <CategoryDropdownContainer isLightBlue>
+     <option>Choose Category</option>
+     <option>Australia</option>
+     <option>China</option>
+     <option>France</option>
+    </CategoryDropdownContainer>
+   </DropdownOuterContainer>
+   <AsideMenuContainer>
+    <DropdownOuterContainer>
+     <DropdownContainer>
+      <option>Ship From</option>
+      <option>Australia</option>
+      <option>China</option>
+      <option>France</option>
+     </DropdownContainer>
+    </DropdownOuterContainer>
+    <DropdownOuterContainer>
+     <DropdownContainer>
+      <option>Ship To</option>
+      <option>Australia</option>
+      <option>China</option>
+      <option>France</option>
+     </DropdownContainer>
+    </DropdownOuterContainer>
+    <DropdownOuterContainer>
+     <DropdownContainer>
+      <option>Select Supplier</option>
+      <option>Australia</option>
+      <option>China</option>
+      <option>France</option>
+     </DropdownContainer>
+    </DropdownOuterContainer>
+   </AsideMenuContainer>
+   <SliderContainer />
+  </AsideContainer>
+ );
 };
 
 export default Aside;

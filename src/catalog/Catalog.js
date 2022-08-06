@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {useParams, useHistory} from "react-router";
-import "./catalog.css";
 import {getProducts} from "../redux/products/ProductActions";
-import Product from "./Product";
+import Product from "./product/Product";
 import Modal from "./Modal.js";
 import Spinner from "./Spinner";
+import {CatalogContainer} from "./catalog.styled";
 
 const Catalog = () => {
  const [spinner, setSpinner] = useState(true);
@@ -36,7 +36,7 @@ const Catalog = () => {
   return <Spinner />;
  } else {
   return (
-   <section className="catalog">
+   <CatalogContainer>
     {products.map((product) => (
      <Product
       key={product.id}
@@ -50,7 +50,7 @@ const Catalog = () => {
      />
     ))}
     {product && <Modal product={product} onClose={onClose}></Modal>}
-   </section>
+   </CatalogContainer>
   );
  }
 };

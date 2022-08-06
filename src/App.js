@@ -1,6 +1,5 @@
 import "./App.css";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Dropship from "./other-components/Dropship/Dropship";
 import Main from "./main/Main";
 import LandingPage from "./landing-page/LandingPage";
 import Login from "./authentication/Login";
@@ -23,10 +22,6 @@ function App() {
      </Route>
      <Route exact path="/login">
       <Login />
-     </Route>
-     <Route path="/dropship">
-      <Menu />
-      <Dropship />
      </Route>
      <Route path="/user">
       <Menu />

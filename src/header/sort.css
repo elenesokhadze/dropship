@@ -1,0 +1,48 @@
+.nav__sort {
+  background-color: #fff;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding-left: 4%;
+  gap: 5px;
+  width: 100%;
+  padding-top: 1%;
+  border-bottom: 2px solid #dbe0f3;
+}
+
+#sort {
+  font-family: Gilroy-regular;
+  color: #aba7a7;
+  font-size: 15px !important;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* Remove default arrow */
+  width: 180px;
+  padding: 20px;
+}
+
+.nav__icon {
+  color: #aba7a7;
+}
+
+.fa-sort {
+  color: #aba7a7 !important;
+}
+
+.sort__item {
+  background-color: #edf2fb !important;
+  color: #333;
+  width: 500px;
+  border: 2px solid red !important;
+}
+
+#sort * {
+  border-radius: 15px;
+  background-color: red;
+}

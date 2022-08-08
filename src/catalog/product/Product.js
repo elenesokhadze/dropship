@@ -10,7 +10,7 @@ import {
  ProductSupplierOuterContainer,
  ProductSupplierContainer,
  ProductSupplierButton,
-} from "./product.styled";
+} from "./product.styled.ts";
 import {ProductPrice} from "./ProductPrice";
 import {ProductCounter} from "./ProductCounter";
 
@@ -48,7 +48,10 @@ const Product = ({title, price, image, product, id, onOpen, index}) => {
       <ProductSupplierOuterContainer>
        <ProductSupplierContainer>
         <ProductSupplierButton>By: PL-Supplier149</ProductSupplierButton>
-        <ProductCounter id={index} />
+        <ProductCounter
+         id={index}
+         visibilityHidden={!selectedProducts.includes(id)}
+        />
        </ProductSupplierContainer>
       </ProductSupplierOuterContainer>
      </ProductTitleOuterContainer>

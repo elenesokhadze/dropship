@@ -1,4 +1,4 @@
-import {ProductHoverContainer} from "./product.styled";
+import {ProductHoverContainer} from "./product.styled.ts";
 import {PrimaryButton} from "../../button/PrimaryButton";
 import {useDispatch, useSelector} from "react-redux";
 import {selectOne, removeOne} from "../../redux/products/ProductActions";

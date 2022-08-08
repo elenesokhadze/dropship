@@ -3,12 +3,13 @@ import {useSelector, useDispatch} from "react-redux";
 import {useParams, useHistory} from "react-router";
 import {getProducts} from "../redux/products/ProductActions";
 import Product from "./product/Product";
-import Modal from "./Modal.js";
-import Spinner from "./Spinner";
+import Modal from "./modal/Modal.js";
 import {CatalogContainer} from "./catalog.styled";
+import Spinner from "../spinner/Spinner";
 
 const Catalog = () => {
  const [spinner, setSpinner] = useState(true);
+
  const products = useSelector((state) => state.product.products);
  const dispatch = useDispatch();
  const {id} = useParams();
@@ -30,8 +31,6 @@ const Catalog = () => {
   dispatch(getProducts());
  }, [dispatch]);
 
- const product = products.find((item) => item.id === id);
-
  if (spinner) {
   return <Spinner />;
  } else {
@@ -49,7 +48,9 @@ const Catalog = () => {
       onOpen={onOpen}
      />
     ))}
-    {product && <Modal product={product} onClose={onClose}></Modal>}
+    {products[id - 1] && (
+     <Modal product={products[id - 1]} onClose={onClose}></Modal>
+    )}
    </CatalogContainer>
   );
  }

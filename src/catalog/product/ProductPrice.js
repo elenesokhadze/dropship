@@ -2,7 +2,7 @@ import {
  ProductPriceContainer,
  ProductPriceItem,
  ProductPriceItemBlue,
-} from "./product.styled";
+} from "./product.styled.ts";
 
 export const ProductPrice = ({price}) => {
  return (

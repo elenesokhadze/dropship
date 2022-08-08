@@ -6,8 +6,9 @@ import {
  decrement,
  add_counter,
 } from "../../redux/counter/counterActions";
+import {ProductCounterContainer} from "./product.styled";
 
-export const ProductCounter = ({id}) => {
+export const ProductCounter = ({id, visibilityHidden}) => {
  const dispatch = useDispatch();
 
  const handleIncrement = () => {
@@ -22,14 +23,17 @@ export const ProductCounter = ({id}) => {
  const count = useSelector((state) => state.counter[id]?.count);
 
  return (
-  <div>
+  <ProductCounterContainer
+   id="ProductCounterContainer"
+   visibilityHidden={visibilityHidden}
+  >
    <ButtonGroup onClick={(e) => e.stopPropagation()} color="primary">
     <Button onClick={handleDecrement}>-</Button>
     <Button disabled style={{color: "grey"}}>
-     {count ? count : 0}
+     {count ? count : 1}
     </Button>
     <Button onClick={handleIncrement}>+</Button>
    </ButtonGroup>
-  </div>
+  </ProductCounterContainer>
  );
 };

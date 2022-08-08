@@ -22,6 +22,11 @@ export const ProductHoverContainer = styled.div`
  justify-content: space-between;
  align-items: center;
  padding: 10px;
+ input[type="checkbox"] {
+  accent-color: #64c7d0;
+  width: 20px;
+  height: 20px;
+ }
 `;
 
 export const ProductImageContainer = styled.div`
@@ -111,4 +116,12 @@ export const ProductPriceItemBlue = styled.div`
  gap: 3px;
  color: #64c7d0;
  font-weight: 700;
+`;
+
+export const ProductCounterContainer = styled.div<{visibilityHidden: Boolean}>`
+ ${(props) =>
+  props.visibilityHidden &&
+  `   
+visibility: hidden;
+      `}
 `;

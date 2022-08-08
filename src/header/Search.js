@@ -19,6 +19,12 @@ const Search = () => {
   dispatch(searchProducts(input));
  };
 
+ const handleSearchInput = (e) => {
+  setTimeout(() => {
+   setInput(e.target.value);
+  }, 2000);
+ };
+
  return (
   <SearchContainer>
    <SearchInputContainer onSubmit={handleSearch}>
@@ -26,8 +32,7 @@ const Search = () => {
      itemID="searchQuery"
      type="text"
      placeholder="Search..."
-     value={input}
-     onChange={(e) => setInput(e.target.value)}
+     onChange={handleSearchInput}
     />
     <SearchButton>
      <SearchIcon />

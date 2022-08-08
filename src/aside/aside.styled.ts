@@ -101,6 +101,7 @@ export const RangeItem = styled.div<{isSmall: Boolean}>`
  font-family: Gilroy;
  font-size: 13px !important;
  font-weight: 500 !important;
+ padding-right: 10px;
  color: #65737e !important;
  display: -webkit-box;
  display: flex;

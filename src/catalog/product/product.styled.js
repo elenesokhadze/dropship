@@ -25,16 +25,16 @@ export const ProductHoverContainer = styled.div`
 `;
 
 export const ProductImageContainer = styled.div`
- height: 320px;
+ height: 240px;
  width: 100%;
  display: flex;
  justify-content: center;
  align-items: center;
- padding-bottom: 10px;
+ padding-bottom: 30px;
  padding-top: 10px;
  img {
-  height: 320px;
-  width: 292px;
+  height: 240px;
+  width: 220px;
  }
 `;
 

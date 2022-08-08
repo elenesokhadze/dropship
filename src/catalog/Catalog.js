@@ -37,11 +37,11 @@ const Catalog = () => {
  } else {
   return (
    <CatalogContainer>
-    {products.map((product) => (
+    {products.map((product, index) => (
      <Product
       key={product.id}
       id={product.id}
-      index={product.id}
+      index={index}
       title={product.title}
       price={product.price}
       image={product.image}

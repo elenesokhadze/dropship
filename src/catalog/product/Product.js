@@ -14,8 +14,9 @@ import {
 import {ProductPrice} from "./ProductPrice";
 import {ProductCounter} from "./ProductCounter";
 
-const Product = ({title, price, image, product, id, onOpen}) => {
+const Product = ({title, price, image, product, id, onOpen, index}) => {
  const [active, setActive] = useState(false);
+
  const selectedProducts = useSelector(
   (state) => state.product.selectedProducts
  );
@@ -25,7 +26,6 @@ const Product = ({title, price, image, product, id, onOpen}) => {
    setActive(true);
   }
  }, [id, selectedProducts]);
-
  return (
   <ProductContainer
    onMouseEnter={() => {
@@ -48,7 +48,7 @@ const Product = ({title, price, image, product, id, onOpen}) => {
       <ProductSupplierOuterContainer>
        <ProductSupplierContainer>
         <ProductSupplierButton>By: PL-Supplier149</ProductSupplierButton>
-        <ProductCounter />
+        <ProductCounter id={index} />
        </ProductSupplierContainer>
       </ProductSupplierOuterContainer>
      </ProductTitleOuterContainer>

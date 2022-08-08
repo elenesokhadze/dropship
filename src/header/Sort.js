@@ -1,7 +1,7 @@
-import "./sort.css";
 import {sortProducts} from "../redux/products/ProductActions";
 import {useDispatch} from "react-redux";
 import SortIcon from "@material-ui/icons/Sort";
+import {SortContainer, SortSelect, SortOption} from "./header.styled";
 
 const Sort = () => {
  const dispatch = useDispatch();
@@ -13,27 +13,17 @@ const Sort = () => {
  };
 
  return (
-  <div className="nav__sort">
-   <SortIcon className="nav__icon" fontSize="small" />
-   <select id="sort" onChange={handleSort}>
-    <option className="sort__item" value="sort">
-     Sort By: New Arrivals
-    </option>
-    <option className="sort__item" value="asc">
-     Price: High to Low{" "}
-    </option>
-    <option className="sort__item" value="desc">
-     Price: Low to High
-    </option>
-    <option className="sort__item" value="alphAsc">
-     Alphabet: A-Z
-    </option>
-    <option className="sort__item" value="alphDesc">
-     Alphabet: Z-A
-    </option>
-   </select>
-   <i className="fas fa-sort"></i>
-  </div>
+  <SortContainer>
+   <SortIcon fontSize="small" style={{color: "#aba7a7"}} />
+   <SortSelect onChange={handleSort}>
+    <SortOption value="sort">Sort By: New Arrivals</SortOption>
+    <SortOption value="asc">Price: High to Low </SortOption>
+    <SortOption value="desc">Price: Low to High</SortOption>
+    <SortOption value="alphAsc">Alphabet: A-Z</SortOption>
+    <SortOption value="alphDesc">Alphabet: Z-A</SortOption>
+   </SortSelect>
+   <i className="fas fa-sort" style={{color: "#aba7a7"}}></i>
+  </SortContainer>
  );
 };
 

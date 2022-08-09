@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AsideContainer = styled.div`
  width: 260px;
- background-color: #ecedf5;
+ background-color: ${({theme}) => theme.colors.primary.grey.main}
  height: 100%;
  position: fixed;
  margin-left: 56px;
@@ -12,21 +12,21 @@ export const DropdownOuterContainer = styled.div`
  min-width: 160px;
  max-width: 257px;
  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
- background: #fff;
+ background: ${({theme}) => theme.colors.primary.white.main};
 `;
 
 export const DropdownContainer = styled.select`
- background: #fff;
+ background: ${({theme}) => theme.colors.primary.white.main};
  border-radius: 4px;
- border-right: 16px solid #fff;
+ border-right: 16px solid ${({theme}) => theme.colors.primary.white.main};
  height: 40px;
  overflow: hidden;
- border-bottom: 1px solid #dbe0f3;
+ border-bottom: 1px solid ${({theme}) => theme.colors.primary.grey.shade};
  width: 232px;
  cursor: pointer;
  border: none;
  box-sizing: border-box;
- color: #29304b;
+ color: ${({theme}) => theme.colors.primary.blue.main};
  font-size: 100%;
  padding-left: 10px;
  margin-right: 10px;
@@ -42,7 +42,7 @@ export const AsideMenuContainer = styled.div`
 
 export const CategoryDropdownContainer = styled.select<{isLightBlue: Boolean}>`
  height: 60px;
- color: #fff;
+ color: ${({theme}) => theme.colors.primary.white.main};
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -53,7 +53,7 @@ export const CategoryDropdownContainer = styled.select<{isLightBlue: Boolean}>`
  border: none;
  font-size: 15px;
  border-right: 16px solid transparent;
- background-color: #5d6b9f;
+ background-color: ${({theme}) => theme.colors.primary.blue.main};
  ${(props) =>
   props.isLightBlue &&
   `   background-color: #9da9d5;
@@ -79,7 +79,7 @@ export const SliderTextContainer = styled.div`
  font-family: Gilroy !important;
  display: inline-block;
  font-weight: 600;
- color: #323949;
+ color: ${({theme}) => theme.colors.primary.blue.shade};
  font-size: 12px;
 `;
 
@@ -87,7 +87,7 @@ export const RangeSliderContainer = styled.div`
  font-family: Gilroy !important;
  display: inline-block;
  font-weight: 600;
- color: #323949;
+ color: ${({theme}) => theme.colors.primary.blue.shade};
  font-size: 12px;
 `;
 
@@ -102,14 +102,14 @@ export const RangeItem = styled.div<{isSmall: Boolean}>`
  font-size: 13px !important;
  font-weight: 500 !important;
  padding-right: 10px;
- color: #65737e !important;
+ color: ${({theme}) => theme.colors.primary.blue.shade} !important;
  display: -webkit-box;
  display: flex;
  -webkit-box-align: center;
  align-items: center;
  min-width: 36px;
  height: 26px;
- background-color: #fff;
+ background-color: ${({theme}) => theme.colors.primary.white.main};
  align-items: center;
  -webkit-box-pack: center;
  justify-content: center;

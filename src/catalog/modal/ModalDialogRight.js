@@ -14,8 +14,8 @@ import {PrimaryButton} from "../../button/PrimaryButton";
 
 export const ModalDialogRight = ({onClose, product}) => {
  return (
-  <ModalDialogRightContainer>
-   <ModalCloseContainer>
+  <ModalDialogRightContainer id="ModalDialogRightContainer">
+   <ModalCloseContainer id="ModalCloseContainer">
     <CloseIcon onClick={onClose} />
    </ModalCloseContainer>
    <ModalDescriptionContainer>

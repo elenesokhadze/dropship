@@ -5,18 +5,19 @@ import {
  ModalPriceContaner,
  ModalItemGrey,
  ModalItemBlue,
+ ModalItemDarkBlue,
 } from "./modal.styled";
 
 export const ModalDialogLeft = ({product}) => {
  return (
-  <ModalDialogLeftContainer>
-   <ModalPriceContaner>
+  <ModalDialogLeftContainer id="ModalDialogLeftContainer">
+   <ModalPriceContaner id="ModalPriceContaner">
     <ModalItem>
-     <strong>${product.price}</strong>
+     <ModalItemDarkBlue>${product.price}</ModalItemDarkBlue>
      <ModalItemGrey>RRP</ModalItemGrey>
     </ModalItem>
     <ModalItem>
-     <strong>${product.price}</strong>
+     <ModalItemDarkBlue>${product.price}</ModalItemDarkBlue>
      <ModalItemGrey>COST</ModalItemGrey>
     </ModalItem>
     <ModalItem>

@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const ProductContainer = styled.div`
  flex: 1 320px;
  max-width: 360px;
- border: 2px solid #ecedf5;
+ border: 2px solid ${({theme}) => theme.colors.primary.grey.main};
  border-radius: 8px;
- background-color: #fff;
+ background-color: ${({theme}) => theme.colors.primary.white.main};
  display: flex;
  flex-direction: column;
  z-index: 2;
@@ -13,7 +13,7 @@ export const ProductContainer = styled.div`
  box-sizing: content-box;
  padding-bottom: 20px;
  &:hover {
-  border: 2px solid #61d5df;
+  border: 2px solid ${({theme}) => theme.colors.primary.blue.main};
  }
 `;
 
@@ -23,7 +23,7 @@ export const ProductHoverContainer = styled.div`
  align-items: center;
  padding: 10px;
  input[type="checkbox"] {
-  accent-color: #64c7d0;
+  accent-color: ${({theme}) => theme.colors.primary.blue.main};
   width: 20px;
   height: 20px;
  }
@@ -56,7 +56,7 @@ export const ProductTitleContainer = styled.div`
  text-transform: uppercase;
  font-weight: 700;
  margin: 0;
- color: #3b3b3b;
+ color: ${({theme}) => theme.colors.primary.blue.shade};
  padding-left: 20px;
  height: 32px;
 `;
@@ -83,7 +83,7 @@ export const ProductSupplierContainer = styled.div`
 export const ProductSupplierButton = styled.div`
  background: none;
  font-size: 14px;
- color: #64c7d0;
+ color: ${({theme}) => theme.colors.primary.blue.main};
  border: none;
  padding: 0;
  cursor: pointer;
@@ -100,7 +100,7 @@ export const ProductPriceContainer = styled.div`
  letter-spacing: 0.14px;
  opacity: 0.7;
  list-style: none;
- color: #808080;
+ color: ${({theme}) => theme.colors.secondary.grey.main};
  margin: 0;
 `;
 
@@ -114,7 +114,7 @@ export const ProductPriceItemBlue = styled.div`
  display: flex;
  flex-direction: column;
  gap: 3px;
- color: #64c7d0;
+ color: ${({theme}) => theme.colors.primary.blue.main};
  font-weight: 700;
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderOuterContainer = styled.div`
  position: fixed;
  z-index: 1000;
- background-color: #f8f9fa;
+ background-color: ${({theme}) => theme.colors.primary.grey.tint};
  width: 83%;
  margin-left: 320px;
 `;
@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderTextContainer = styled.div`
- border-left: 1px solid #dbdcdd;
+ border-left: 1px solid ${({theme}) => theme.colors.primary.grey.shade};
  padding: 5px;
 `;
 
@@ -31,7 +31,7 @@ export const HeaderSelectContainer = styled.div`
  gap: 10px;
  align-items: center;
  font-size: 12px !important;
- color: #29304b;
+ color: ${({theme}) => theme.colors.primary.blue.shade};
 `;
 
 export const SearchContainer = styled.div`
@@ -45,11 +45,11 @@ export const SearchButton = styled.button`
  background-repeat: no-repeat;
  background-size: cover;
  transform: translateX(-45%);
- border: solid 2px #ecedf5;
+ border: solid 2px ${({theme}) => theme.colors.primary.grey.main};
  border-left: none;
- background-color: #fff;
+ background-color: ${({theme}) => theme.colors.primary.white.main};
  border-radius: 12px;
- color: #d6d4d4;
+ color: ${({theme}) => theme.colors.primary.grey.shade};
  cursor: pointer;
 `;
 
@@ -58,7 +58,7 @@ export const SearchInputContainer = styled.form`
  width: 435px;
 `;
 export const SearchInput = styled.input`
- border: solid 2px #ecedf5;
+ border: solid 2px ${({theme}) => theme.colors.primary.grey.main};
  height: 33px;
  width: 450px;
  padding-left: 3%;
@@ -74,7 +74,7 @@ export const FaqContainer = styled.div`
 `;
 
 export const SortContainer = styled.div`
- background-color: #fff;
+ background-color: ${({theme}) => theme.colors.primary.white.main};
  height: 35px;
  display: flex;
  align-items: center;
@@ -82,12 +82,12 @@ export const SortContainer = styled.div`
  gap: 5px;
  width: 100%;
  padding-top: 1%;
- border-bottom: 2px solid #dbe0f3;
+ border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.shade};
 `;
 
 export const SortSelect = styled.select`
  font-family: Gilroy-regular;
- color: #aba7a7;
+ color: ${({theme}) => theme.colors.secondary.grey.main};
  font-size: 15px !important;
  font-weight: 400;
  background-color: transparent;
@@ -103,21 +103,7 @@ export const SortSelect = styled.select`
 `;
 
 export const SortOption = styled.option`
- background-color: #edf2fb !important;
- color: #333;
+ background-color: ${({theme}) => theme.colors.primary.grey.main} !important;
+ color: ${({theme}) => theme.colors.secondary.grey.main};
  width: 500px;
- border: 2px solid red !important;
 `;
-
-//   .nav__icon {
-//     color: #aba7a7;
-//   }
-
-//   .fa-sort {
-//     color: #aba7a7 !important;
-//   }
-
-//   #sort * {
-//     border-radius: 15px;
-//     background-color: red;
-//   }

@@ -5,7 +5,7 @@ export const ModalContainer = styled.div`
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
- background-color: #fff;
+ background-color: ${({theme}) => theme.colors.primary.white.main};
  z-index: 1000;
  max-width: 1120px;
  width: 100%;
@@ -24,7 +24,7 @@ export const OverlayContainer = styled.div`
 `;
 
 export const ModalDialogContainer = styled.div`
- background: #fff;
+ background: ${({theme}) => theme.colors.primary.white.main};
  display: flex;
  gap: 20px;
  padding: 20px;
@@ -54,19 +54,24 @@ export const ModalPriceContaner = styled.ul`
  list-style: none;
  border-radius: 7px;
  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 5%);
- background: #fafafa;
- border: 1.5px solid #fff;
+ background: ${({theme}) => theme.colors.primary.grey.tint};
+ border: 1.5px solid ${({theme}) => theme.colors.primary.white.main};
  justify-content: center;
  padding: 0;
 `;
 
 export const ModalItemGrey = styled.span`
  font-size: 14px;
- color: #707070;
+ color: ${({theme}) => theme.colors.secondary.grey.main};
+`;
+
+export const ModalItemDarkBlue = styled.span`
+ color: ${({theme}) => theme.colors.primary.blue.shade};
+ font-weight: bold;
 `;
 
 export const ModalItemBlue = styled.span`
- color: #61d5df;
+ color: ${({theme}) => theme.colors.primary.blue.main};
  font-weight: bold;
 `;
 
@@ -76,14 +81,14 @@ export const ModalTitle = styled.div`
 
 export const ModalDescriptionContainer = styled.div`
  line-height: 1.63;
- color: rgba(112, 112, 112, 0.7);
+ color: ${({theme}) => theme.colors.secondary.grey.main};
  font-size: 16px;
  display: flex;
  justify-content: space-between;
 `;
 
 export const ModalDetailsContainer = styled.div`
- color: #707070;
+ color: ${({theme}) => theme.colors.secondary.grey.main};
  span {
   word-wrap: break-word;
  }
@@ -95,7 +100,7 @@ export const ModalDescriptionSupplier = styled.div`
 `;
 
 export const ModalDescriptionBlue = styled.div`
- color: #61d5df;
+ color: ${({theme}) => theme.colors.primary.blue.main};
 `;
 
 export const ModalCloseContainer = styled.div`
@@ -104,7 +109,7 @@ export const ModalCloseContainer = styled.div`
  cursor: pointer;
  button {
   &:hover {
-   background: #ecedf5;
+   background: ${({theme}) => theme.colors.primary.grey.main};
   }
  }
 `;

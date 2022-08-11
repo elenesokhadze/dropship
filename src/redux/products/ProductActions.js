@@ -1,4 +1,3 @@
-import ProductAPI from "../products/ProductAPI";
 import {
  Fetch_Products,
  SEARCH_PRODUCTS,
@@ -9,10 +8,17 @@ import {
  SELECT_ALL_PRODUCT,
  REMOVE_ALL_PRODUCT,
 } from "./ProductActionTypes";
+import axios from "axios";
 
 export const getProducts = () => async (dispatch) => {
- const productApi = ProductAPI("https://fakestoreapi.com/products");
- const products = await productApi.get();
+ const products = await axios("https://fakestoreapi.com/products", {
+  method: "GET",
+  mode: "no-cors",
+  headers: {
+   "Access-Control-Allow-Origin": "*",
+   "Content-Type": "application/json",
+  },
+ });
 
  dispatch({
   type: Fetch_Products,

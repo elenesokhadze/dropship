@@ -117,11 +117,3 @@ export const ProductPriceItemBlue = styled.div`
  color: ${({theme}) => theme.colors.primary.blue.main};
  font-weight: 700;
 `;
-
-export const ProductCounterContainer = styled.div<{visibilityHidden: Boolean}>`
- ${(props) =>
-  props.visibilityHidden &&
-  `   
-visibility: hidden;
-      `}
-`;

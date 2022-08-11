@@ -7,8 +7,14 @@ axios.interceptors.request.use((config) => {
 });
 
 export const productsAPI = async () => {
- const results = await axios.get("https://fakestoreapi.com/products");
- console.log(results.data);
+ const results = await axios("https://fakestoreapi.com/products", {
+  method: "GET",
+  mode: "no-cors",
+  headers: {
+   "Access-Control-Allow-Origin": "*",
+   "Content-Type": "application/json",
+  },
+ });
  return results.data;
 };
 

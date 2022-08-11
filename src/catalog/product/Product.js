@@ -12,7 +12,6 @@ import {
  ProductSupplierButton,
 } from "./product.styled.ts";
 import {ProductPrice} from "./ProductPrice";
-import {ProductCounter} from "./ProductCounter";
 
 const Product = ({title, price, image, product, id, onOpen, index}) => {
  const [active, setActive] = useState(false);
@@ -48,10 +47,6 @@ const Product = ({title, price, image, product, id, onOpen, index}) => {
       <ProductSupplierOuterContainer>
        <ProductSupplierContainer>
         <ProductSupplierButton>By: PL-Supplier149</ProductSupplierButton>
-        <ProductCounter
-         id={index}
-         visibilityHidden={!selectedProducts.includes(id)}
-        />
        </ProductSupplierContainer>
       </ProductSupplierOuterContainer>
      </ProductTitleOuterContainer>

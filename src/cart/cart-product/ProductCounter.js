@@ -3,12 +3,12 @@ import Button from "@material-ui/core/Button";
 import {ButtonGroup} from "@material-ui/core";
 import {
  increment,
- decrement,
  add_counter,
+ decrement,
 } from "../../redux/counter/counterActions";
-import {ProductCounterContainer} from "./product.styled";
+import {ProductCounterContainer} from "./cartProduct.styled";
 
-export const ProductCounter = ({id, visibilityHidden}) => {
+export const ProductCounter = ({id, qty}) => {
  const dispatch = useDispatch();
 
  const handleIncrement = () => {
@@ -23,14 +23,11 @@ export const ProductCounter = ({id, visibilityHidden}) => {
  const count = useSelector((state) => state.counter[id]?.count);
 
  return (
-  <ProductCounterContainer
-   id="ProductCounterContainer"
-   visibilityHidden={visibilityHidden}
-  >
+  <ProductCounterContainer id="ProductCounterContainer">
    <ButtonGroup onClick={(e) => e.stopPropagation()} color="primary">
     <Button onClick={handleDecrement}>-</Button>
     <Button disabled style={{color: "grey"}}>
-     {count ? count : 1}
+     {count ? count : qty}
     </Button>
     <Button onClick={handleIncrement}>+</Button>
    </ButtonGroup>

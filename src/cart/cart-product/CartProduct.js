@@ -1,4 +1,4 @@
-import {useSelector, useDispatch} from "react-redux";
+import {useDispatch} from "react-redux";
 import DeleteIcon from "@material-ui/icons/Delete";
 import {ProductCounter} from "./ProductCounter";
 import {theme} from "../../theme";
@@ -10,7 +10,6 @@ import {
 import {removeFromCart} from "../../redux/cart/CartActions";
 
 const CartProduct = ({image, title, qty, price, id}) => {
- const count = useSelector((state) => state.counter);
  const dispatch = useDispatch();
  const total = price * qty;
 

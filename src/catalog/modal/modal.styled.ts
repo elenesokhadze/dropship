@@ -77,6 +77,7 @@ export const ModalItemBlue = styled.span`
 
 export const ModalTitle = styled.div`
  margin-top: 30px;
+ font-size: 18px;
 `;
 
 export const ModalDescriptionContainer = styled.div`
@@ -112,11 +113,6 @@ export const ModalCloseContainer = styled.div`
    background: ${({theme}) => theme.colors.primary.grey.main};
   }
  }
-`;
-
-export const ModalButtonContainer = styled.div`
- display: flex;
- justify-content: flex-end;
 `;
 
 export const ModalTabsContainer = styled.div`

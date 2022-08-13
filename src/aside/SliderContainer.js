@@ -21,7 +21,6 @@ const SliderContainer = () => {
   const filteredProducts = products.filter((product) => {
    return product.price >= value[0] && product.price <= value[1];
   });
-  console.log(filterProducts(filteredProducts));
   dispatch(filterProducts(filteredProducts));
  };
  const resethandleFilterPrice = () => {

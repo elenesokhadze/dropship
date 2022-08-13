@@ -5,12 +5,10 @@ import {
  ModalDescriptionSupplier,
  ModalDescriptionBlue,
  ModalCloseContainer,
- ModalButtonContainer,
  ModalTabsContainer,
  ModalDialogRightContainer,
 } from "./modal.styled";
 import CloseIcon from "@material-ui/icons/Close";
-import {PrimaryButton} from "../../button/PrimaryButton";
 
 export const ModalDialogRight = ({onClose, product}) => {
  return (
@@ -26,9 +24,6 @@ export const ModalDialogRight = ({onClose, product}) => {
     </ModalDescriptionSupplier>
    </ModalDescriptionContainer>
    <ModalTitle>{product.title}</ModalTitle>
-   <ModalButtonContainer>
-    <PrimaryButton>Add To My Cart</PrimaryButton>
-   </ModalButtonContainer>
    <ModalTabsContainer>
     <div>Product Details</div>
     <div>Shipping Rates</div>

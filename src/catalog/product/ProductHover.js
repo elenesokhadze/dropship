@@ -1,4 +1,7 @@
-import {ProductHoverContainer} from "./product.styled.ts";
+import {
+ ProductHoverContainer,
+ ProductHoverButtonContainer,
+} from "./product.styled.ts";
 import {PrimaryButton} from "../../button/PrimaryButton";
 import {useDispatch, useSelector} from "react-redux";
 import {selectOne, removeOne} from "../../redux/products/ProductActions";
@@ -13,16 +16,12 @@ export const ProductHover = ({id}) => {
 
  const count = useSelector((state) => state.counter[id]?.count);
  const product = products.find((item) => item.id === id);
+ const allSelectedId = selectedProducts.map((product) => product.id);
 
  const selectProductHandler = () => {
-  if (selectedProducts.includes(id)) {
+  if (allSelectedId.includes(id)) {
    dispatch(removeOne(id));
-  } else dispatch(selectOne(id));
- };
- const addToInventory = (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  dispatch(addToCart(product, count || 1));
+  } else dispatch(selectOne(product));
  };
 
  return (
@@ -31,11 +30,15 @@ export const ProductHover = ({id}) => {
     <input
      onClick={(e) => e.stopPropagation()}
      type="checkbox"
-     checked={selectedProducts.includes(id)}
+     checked={allSelectedId.includes(id)}
      onChange={selectProductHandler}
     />
    </label>
-   <PrimaryButton onClick={addToInventory}>add to cart</PrimaryButton>
+   <ProductHoverButtonContainer isHidden={allSelectedId.includes(id)}>
+    <PrimaryButton onClick={() => dispatch(addToCart(product, count || 1))}>
+     add to cart
+    </PrimaryButton>
+   </ProductHoverButtonContainer>
   </ProductHoverContainer>
  );
 };

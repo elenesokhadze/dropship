@@ -28,6 +28,12 @@ export const ProductHoverContainer = styled.div`
   height: 20px;
  }
 `;
+export const ProductHoverButtonContainer = styled.div<{isHidden: boolean}>`
+ ${(props) =>
+  props.isHidden &&
+  `   visibility: hidden;
+      `}
+`;
 
 export const ProductImageContainer = styled.div`
  height: 240px;

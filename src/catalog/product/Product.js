@@ -20,18 +20,20 @@ const Product = ({title, price, image, product, id, onOpen, index}) => {
   (state) => state.product.selectedProducts
  );
 
+ const allSelectedId = selectedProducts.map((product) => product.id);
+
  useEffect(() => {
-  if (selectedProducts.includes(id)) {
+  if (allSelectedId.includes(id)) {
    setActive(true);
   }
- }, [id, selectedProducts]);
+ }, [id, allSelectedId]);
  return (
   <ProductContainer
    onMouseEnter={() => {
     setActive(true);
    }}
    onMouseLeave={() => {
-    if (!selectedProducts.includes(id)) {
+    if (!allSelectedId.includes(id)) {
      setActive(false);
     }
    }}

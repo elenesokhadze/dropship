@@ -9,9 +9,11 @@ import {
  HeaderOuterContainer,
  HeaderContainer,
  HeaderTextContainer,
- HeaderNavContainer,
+ HeaderLeftContainer,
  HeaderSelectContainer,
+ HeaderRightContainer,
 } from "./header.styled";
+import {addSelectedToCart} from "../redux/cart/CartActions";
 
 const Header = () => {
  const products = useSelector((state) => state.product.products);
@@ -20,17 +22,17 @@ const Header = () => {
  );
  const dispatch = useDispatch();
  const selectAllHandler = () => {
-  const allProductsId = products.map((product) => product.id);
-  dispatch(selectAll(allProductsId));
+  dispatch(selectAll(products));
  };
  const clearAllHandler = () => {
   const clearProducts = [];
   dispatch(removeAll(clearProducts));
  };
+
  return (
   <HeaderOuterContainer>
    <HeaderContainer>
-    <HeaderNavContainer>
+    <HeaderLeftContainer>
      <HeaderSelectContainer>
       <PrimaryButton onClick={selectAllHandler}>select all</PrimaryButton>
       <HeaderTextContainer>
@@ -42,8 +44,17 @@ const Header = () => {
        ""
       )}
      </HeaderSelectContainer>
-    </HeaderNavContainer>
-    <Search />
+    </HeaderLeftContainer>
+    <HeaderRightContainer>
+     <Search />
+     <PrimaryButton
+      onClick={() =>
+       dispatch(addSelectedToCart(selectedProducts, selectedProducts.length))
+      }
+     >
+      add to cart
+     </PrimaryButton>
+    </HeaderRightContainer>
    </HeaderContainer>
    <Sort />
   </HeaderOuterContainer>

@@ -20,7 +20,7 @@ export const HeaderTextContainer = styled.div`
  padding: 5px;
 `;
 
-export const HeaderNavContainer = styled.div`
+export const HeaderLeftContainer = styled.div`
  display: flex;
  justify-content: space-between;
  padding-left: 2%;
@@ -34,7 +34,7 @@ export const HeaderSelectContainer = styled.div`
  color: ${({theme}) => theme.colors.primary.blue.shade};
 `;
 
-export const SearchContainer = styled.div`
+export const HeaderRightContainer = styled.div`
  display: flex;
  align-items: center;
  gap: 20px;

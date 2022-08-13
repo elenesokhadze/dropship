@@ -7,7 +7,6 @@ const Sort = () => {
  const dispatch = useDispatch();
 
  const handleSort = (e) => {
-  console.log(e.target.value);
   e.preventDefault();
   dispatch(sortProducts(e.target.value));
  };

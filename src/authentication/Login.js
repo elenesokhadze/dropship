@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import "./authentication.css";
 import logo from "../assets/logo.png";
 import {useHistory} from "react-router";
-import {login} from "../API";
 import {useCallback} from "react";
 import {TextField, InputAdornment} from "@material-ui/core";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -35,13 +34,13 @@ function LoginForm() {
  });
 
  const performLogIn = (values) => {
-  login(values.email, values.password)
-   .then((res) => {
-    LoggedIn();
-   })
-   .catch((error) => {
-    alert("email or password is incorrect!!!");
-   });
+  // login(values.email, values.password)
+  //  .then((res) => {
+  //   LoggedIn();
+  //  })
+  //  .catch((error) => {
+  //   alert("email or password is incorrect!!!");
+  //  });
  };
  return (
   <Formik

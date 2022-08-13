@@ -2,7 +2,6 @@ import {Formik, Form} from "formik";
 import * as Yup from "yup";
 import "./authentication.css";
 import {useHistory} from "react-router";
-import {register} from "../API";
 import logo from "../assets/logo.png";
 import {TextField, InputAdornment} from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
@@ -21,19 +20,19 @@ function Register() {
  const handleMouseDownPassword = () => setShowPassword(!showPassword);
 
  const performRegister = (values) => {
-  register(
-   values.firstName,
-   values.lastName,
-   values.email,
-   values.password,
-   values.passwordConfirmation
-  )
-   .then(() => {
-    registered();
-   })
-   .catch(() => {
-    alert("Ooooops..Something went wrong!");
-   });
+  // register(
+  //  values.firstName,
+  //  values.lastName,
+  //  values.email,
+  //  values.password,
+  //  values.passwordConfirmation
+  // )
+  //  .then(() => {
+  //   registered();
+  //  })
+  //  .catch(() => {
+  //   alert("Ooooops..Something went wrong!");
+  //  });
  };
 
  const registered = () => {

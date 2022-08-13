@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PrimaryButtonContainer = styled.div`
+export const PrimaryButtonContainer = styled.button`
  font-size: 12px;
  text-align: center;
  display: flex;

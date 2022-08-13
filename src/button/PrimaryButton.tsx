@@ -4,8 +4,9 @@ import { PrimaryButtonContainer } from "./button.styled";
 export const PrimaryButton: FC<{
     children: JSX.Element,
     onClick: () => void,
-}> = ({ children, onClick, }) => {
+    type?: "button" | "submit" | "reset" | undefined
+}> = ({ children, onClick, type }) => {
     return (
-        <PrimaryButtonContainer onClick={onClick} >{children}</PrimaryButtonContainer>
+        <PrimaryButtonContainer onClick={onClick} type={type} >{children}</PrimaryButtonContainer>
     )
 };

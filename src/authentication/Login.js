@@ -1,9 +1,9 @@
 import {Formik, Form} from "formik";
+import {useCallback} from "react";
+import {Link, useHistory} from "react-router-dom";
 import * as Yup from "yup";
 import "./authentication.css";
 import logo from "../assets/logo.png";
-import {useHistory} from "react-router";
-import {useCallback} from "react";
 import {TextField, InputAdornment} from "@material-ui/core";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
@@ -12,14 +12,17 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {IconButton} from "@material-ui/core";
 import {PrimaryButton} from "../button/PrimaryButton";
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import app from "../firebase";
 
 function LoginForm() {
- const history = useHistory();
  const [showPassword, setShowPassword] = useState(false);
  const handleClickShowPassword = () => setShowPassword(!showPassword);
  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+ const auth = getAuth(app);
+ const history = useHistory();
 
- const LoggedIn = useCallback(() => {
+ const loggedIn = useCallback(() => {
   history.push("/catalog");
  }, [history]);
 
@@ -32,15 +35,21 @@ function LoginForm() {
   email: Yup.string().email("Invalid email format").required("Required"),
   password: Yup.string().required("Required"),
  });
+ let email = JSON.parse(localStorage.getItem("Email") || null);
+ let password = JSON.parse(localStorage.getItem("Password") || null);
 
- const performLogIn = (values) => {
-  // login(values.email, values.password)
-  //  .then((res) => {
-  //   LoggedIn();
-  //  })
-  //  .catch((error) => {
-  //   alert("email or password is incorrect!!!");
-  //  });
+ const performLogIn = () => {
+  signInWithEmailAndPassword(auth, email, password)
+   .then((userCredential) => {
+    // Signed in
+    loggedIn();
+    alert("Successfully Logged In");
+    // ...
+   })
+   .catch((error) => {
+    const errorCode = error.code;
+    alert(errorCode);
+   });
  };
  return (
   <Formik
@@ -108,26 +117,18 @@ function LoginForm() {
          ),
         }}
        />
-       <span className="login__forgot-password">Forgot password?</span>
        <div className="login__button">
         <PrimaryButton type="submit" disabled={!formik.isValid}>
          Submit
         </PrimaryButton>
        </div>
-       <span className="social__title">Or Log In With</span>
-       <div className="social__buttons">
-        <img
-         src="https://app.365dropship.com/gmail.285cd2a6d2400e92b9c8.png"
-         alt=""
-        />
-        <i className="fab fa-facebook-f"></i>
-       </div>
+       <span className="social__title"></span>
        <span className="login__info">
         Don't have an account?{" "}
         <strong>
-         <a className="login-to-signUp" href="/register">
+         <Link className="login-to-signUp" to="/register">
           Sign Up
-         </a>
+         </Link>
         </strong>
        </span>
       </div>

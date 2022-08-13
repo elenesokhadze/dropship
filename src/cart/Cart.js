@@ -5,6 +5,7 @@ import {CartHeader} from "./CartHeader";
 import {CartFooter} from "./CartFooter";
 import {CartBody} from "./CartBody";
 import {getProducts} from "../redux/products/ProductActions";
+import Menu from "../menu/Menu";
 
 const Cart = () => {
  const dispatch = useDispatch();
@@ -12,14 +13,17 @@ const Cart = () => {
   dispatch(getProducts());
  }, [dispatch]);
  return (
-  <CartContainer>
-   <CartHeadingContainer>
-    <h3>SHOPPING CART (0)</h3>
-   </CartHeadingContainer>
-   <CartHeader />
-   <CartBody />
-   <CartFooter />
-  </CartContainer>
+  <>
+   <Menu />
+   <CartContainer>
+    <CartHeadingContainer>
+     <h3>SHOPPING CART (0)</h3>
+    </CartHeadingContainer>
+    <CartHeader />
+    <CartBody />
+    <CartFooter />
+   </CartContainer>
+  </>
  );
 };
 

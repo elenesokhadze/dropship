@@ -1,10 +1,8 @@
 import {Formik, Form} from "formik";
 import * as Yup from "yup";
 import "./authentication.css";
-import {useHistory} from "react-router";
 import logo from "../assets/logo.png";
 import {TextField, InputAdornment} from "@material-ui/core";
-import PersonIcon from "@material-ui/icons/Person";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import {useState} from "react";
@@ -12,31 +10,36 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {IconButton} from "@material-ui/core";
 import {PrimaryButton} from "../button/PrimaryButton";
+import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import app from "../firebase";
 
 function Register() {
- const history = useHistory();
  const [showPassword, setShowPassword] = useState(false);
  const handleClickShowPassword = () => setShowPassword(!showPassword);
  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+ const [email, setEmail] = useState(null);
+ const [password, setPassword] = useState(null);
 
- const performRegister = (values) => {
-  // register(
-  //  values.firstName,
-  //  values.lastName,
-  //  values.email,
-  //  values.password,
-  //  values.passwordConfirmation
-  // )
-  //  .then(() => {
-  //   registered();
-  //  })
-  //  .catch(() => {
-  //   alert("Ooooops..Something went wrong!");
-  //  });
- };
+ const performRegister = (values, {setSubmitting}) => {
+  setEmail(values.email);
+  setPassword(values.password);
+  localStorage.setItem("Email", JSON.stringify(email));
+  localStorage.setItem("Password", JSON.stringify(password));
 
- const registered = () => {
-  history.push("/login");
+  createUserWithEmailAndPassword(auth, email, password)
+   .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    console.log(user);
+    alert("Successfully created an account");
+    // ...
+   })
+   .catch((error) => {
+    const errorCode = error.code;
+    alert(errorCode);
+    // ..
+   });
+  setSubmitting(false);
  };
 
  const initialValues = {
@@ -55,6 +58,8 @@ function Register() {
    .required("Required"),
  });
 
+ const auth = getAuth(app);
+
  return (
   <Formik
    initialValues={initialValues}
@@ -71,47 +76,6 @@ function Register() {
         </div>
         <h3 className="form__title">Sign Up</h3>
        </div>
-       <TextField
-        placeholder="First Name"
-        name="firstName"
-        label="First Name"
-        className="field"
-        variant="outlined"
-        value={formik.values.firstName}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        error={formik.touched.firstName && Boolean(formik.errors.firstName)}
-        helperText={formik.touched.firstName && formik.errors.firstName}
-        style={{width: "80%", color: "grey"}}
-        color="primary"
-        InputProps={{
-         startAdornment: (
-          <InputAdornment position="start">
-           <PersonIcon color="primary" />
-          </InputAdornment>
-         ),
-        }}
-       />
-
-       <TextField
-        placeholder="Last Name"
-        name="lastName"
-        label="Last Name"
-        variant="outlined"
-        value={formik.values.lastName}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        error={formik.touched.lastName && Boolean(formik.errors.lastName)}
-        helperText={formik.touched.lastName && formik.errors.lastName}
-        style={{width: "80%", color: "grey"}}
-        InputProps={{
-         startAdornment: (
-          <InputAdornment position="start">
-           <PersonIcon color="primary" />
-          </InputAdornment>
-         ),
-        }}
-       />
        <TextField
         placeholder="E-mail"
         name="email"
@@ -204,14 +168,7 @@ function Register() {
          Sign Up
         </PrimaryButton>
        </div>
-       <span className="social__title">Or Log In With</span>
-       <div className="social__buttons">
-        <img
-         src="https://app.365dropship.com/gmail.285cd2a6d2400e92b9c8.png"
-         alt=""
-        />
-        <i class="fab fa-facebook-f"></i>
-       </div>
+       <span className="social__title"></span>
        <span className="login__info">
         Already have an account?{" "}
         <strong>

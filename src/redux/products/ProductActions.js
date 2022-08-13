@@ -20,11 +20,11 @@ export const getProducts = () => async (dispatch) => {
   },
  });
  localStorage.setItem("Products", JSON.stringify(products));
- var storage = JSON.parse(localStorage.getItem("Products") || products);
+ let storageProducts = JSON.parse(localStorage.getItem("Products") || products);
  dispatch({
   type: Fetch_Products,
   payload: {
-   productData: storage.data,
+   productData: storageProducts.data,
   },
  });
 };

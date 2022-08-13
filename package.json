@@ -17,6 +17,7 @@
   "@types/react": "^17.0.48",
   "@types/react-dom": "^18.0.6",
   "axios": "^0.21.1",
+  "firebase": "^9.9.2",
   "formik": "^2.2.9",
   "install": "^0.13.0",
   "npm": "^7.20.0",

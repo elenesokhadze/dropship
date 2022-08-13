@@ -8,6 +8,7 @@ import User from "./user/User";
 import Menu from "./menu/Menu";
 import Cart from "./cart/Cart";
 import {StyledThemeProvider} from "./theme";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
  return (
@@ -21,24 +22,12 @@ function App() {
       <Route exact path="/login">
        <Login />
       </Route>
-      <Route path="/user">
-       <Menu />
-       <User />
-      </Route>
-      <Route path="/cart">
-       <Menu />
-       <Cart />
-      </Route>
       <Route path="/register">
        <Register />
       </Route>
-      <Route path="/catalog/:id?">
-       <Main />
-      </Route>
-      <Route path="/cart">
-       <Menu />
-       <p>Elene</p>
-      </Route>
+      <PrivateRoute path="/user" component={User} />
+      <PrivateRoute path="/cart" component={Cart} />
+      <PrivateRoute path="/catalog/:id?" component={Main} />
      </StyledThemeProvider>
     </Switch>
    </Router>

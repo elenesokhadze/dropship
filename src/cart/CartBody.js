@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 
 export const CartBody = () => {
  const cart = useSelector((state) => state.cart);
+
  return (
   <CartBodyContainer id="CartBodyContainer">
    {cart?.length > 0

@@ -45,7 +45,7 @@ export const CartBodyContainer = styled.div`
  align-items: flex-start;
  justify-content: flex-start;
  width: 94%;
- background-color: #fff;
+ background-color: ${({theme}) => theme.colors.primary.white.main};
  margin-left: 3%;
  overflow-y: auto;
  height: calc(100vh - 308px);

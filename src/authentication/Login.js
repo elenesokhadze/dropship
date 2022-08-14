@@ -1,24 +1,25 @@
 import {Formik, Form} from "formik";
 import {useCallback} from "react";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import * as Yup from "yup";
-import "./authentication.css";
 import logo from "../assets/logo.png";
-import {TextField, InputAdornment} from "@material-ui/core";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import {useState} from "react";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import {IconButton} from "@material-ui/core";
 import {PrimaryButton} from "../button/PrimaryButton";
 import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import app from "../firebase";
+import {
+ FormDialog,
+ FormHeader,
+ FormWrapper,
+ FormTitle,
+ FormLogo,
+ BackToSignup,
+ LoginInfo,
+ AuthButtonContainer,
+} from "./authentication.styled";
+import {EmailTextfield} from "./auth-textfields/EmailTextfield";
+import {PasswordTextfield} from "./auth-textfields/PasswordTextfield";
 
 function LoginForm() {
- const [showPassword, setShowPassword] = useState(false);
- const handleClickShowPassword = () => setShowPassword(!showPassword);
- const handleMouseDownPassword = () => setShowPassword(!showPassword);
  const auth = getAuth(app);
  const history = useHistory();
 
@@ -59,79 +60,28 @@ function LoginForm() {
   >
    {(formik) => {
     return (
-     <Form className="form__wrapper">
-      <div className="form__dialog form__dialog--login">
-       <div className="form__header form__header--login">
-        <div className="form__logo">
-         <img src={logo} alt="" />
-        </div>
-        <h3 className="form__title">Members Log In</h3>
-       </div>
-       <TextField
-        placeholder="E-mail"
-        name="email"
-        label="E-mail"
-        variant="outlined"
-        value={formik.values.email}
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        error={formik.touched.email && Boolean(formik.errors.email)}
-        helperText={formik.touched.email && formik.errors.email}
-        style={{width: "80%", color: "grey"}}
-        InputProps={{
-         startAdornment: (
-          <InputAdornment position="start">
-           <MailOutlineIcon color="primary" />
-          </InputAdornment>
-         ),
-        }}
-       />
-       <TextField
-        placeholder="Password"
-        name="password"
-        label="Password"
-        variant="outlined"
-        value={formik.values.password}
-        onBlur={formik.handleBlur}
-        error={formik.touched.password && Boolean(formik.errors.password)}
-        helperText={formik.touched.password && formik.errors.password}
-        type={showPassword ? "text" : "password"}
-        onChange={formik.handleChange}
-        style={{width: "80%", color: "grey"}}
-        InputProps={{
-         startAdornment: (
-          <InputAdornment position="start">
-           <VpnKeyIcon color="primary" />
-          </InputAdornment>
-         ),
-         endAdornment: (
-          <InputAdornment position="end">
-           <IconButton
-            aria-label="toggle password visibility"
-            onClick={handleClickShowPassword}
-            onMouseDown={handleMouseDownPassword}
-           >
-            {showPassword ? <Visibility /> : <VisibilityOff />}
-           </IconButton>
-          </InputAdornment>
-         ),
-        }}
-       />
-       <div className="login__button">
-        <PrimaryButton type="submit" disabled={!formik.isValid}>
-         Submit
-        </PrimaryButton>
-       </div>
-       <span className="social__title"></span>
-       <span className="login__info">
-        Don't have an account?{" "}
-        <strong>
-         <Link className="login-to-signUp" to="/register">
-          Sign Up
-         </Link>
-        </strong>
-       </span>
-      </div>
+     <Form>
+      <FormWrapper id="FormWrapper">
+       <FormDialog>
+        <FormHeader>
+         <FormLogo>
+          <img src={logo} alt="dropship" />
+         </FormLogo>
+         <FormTitle>Members Log In</FormTitle>
+        </FormHeader>
+        <EmailTextfield {...formik} />
+        <PasswordTextfield {...formik} />
+        <AuthButtonContainer>
+         <PrimaryButton type="submit" disabled={!formik.isValid}>
+          Submit
+         </PrimaryButton>
+        </AuthButtonContainer>
+        <LoginInfo>
+         Don't have an account?{" "}
+         <BackToSignup href="/register">Sign Up</BackToSignup>
+        </LoginInfo>
+       </FormDialog>
+      </FormWrapper>
      </Form>
     );
    }}

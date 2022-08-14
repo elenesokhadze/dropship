@@ -5,7 +5,6 @@ import LandingPage from "./landing-page/LandingPage";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
 import User from "./user/User";
-import Menu from "./menu/Menu";
 import Cart from "./cart/Cart";
 import {StyledThemeProvider} from "./theme";
 import PrivateRoute from "./PrivateRoute";

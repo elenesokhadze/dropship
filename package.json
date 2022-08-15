@@ -60,6 +60,7 @@
   ]
  },
  "devDependencies": {
-  "@types/styled-components": "^5.1.25"
+  "@types/styled-components": "^5.1.25",
+  "react-error-overlay": "^6.0.9"
  }
 }

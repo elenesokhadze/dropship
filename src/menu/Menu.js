@@ -1,35 +1,41 @@
 import "./menu.css";
 import logo from "../assets/logo.png";
 import user from "../assets/user.jpg";
-
 import {Link} from "react-router-dom";
+import {
+ MenuContainer,
+ MenuNav,
+ MenuItemCircled,
+ MenuLogo,
+ MenuUserImage,
+} from "./menu.styled";
 
 const Menu = () => {
  return (
-  <aside className="menu">
-   <ul className="menu__nav">
+  <MenuContainer>
+   <MenuNav>
     <Link to="/">
-     <li className="menu__item">
-      <img className="menu__logo" src={logo} alt=""></img>
+     <li>
+      <MenuLogo src={logo} alt="dropship" />
      </li>
     </Link>
     <Link to="/user">
-     <li className="menu__item menu__item--circle">
-      <img className="user__image" src={user} alt=""></img>
-     </li>
+     <MenuItemCircled>
+      <MenuUserImage src={user} alt="user-image" />
+     </MenuItemCircled>
     </Link>
     <Link to="/catalog">
-     <li className="menu__item">
+     <li>
       <i className="fas fa-list-ul"></i>
      </li>
     </Link>
     <Link to="/cart">
-     <li className="menu__item">
+     <li>
       <i className="fas fa-shopping-cart"></i>
      </li>
     </Link>
-   </ul>
-  </aside>
+   </MenuNav>
+  </MenuContainer>
  );
 };
 

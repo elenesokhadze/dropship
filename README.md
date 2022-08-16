@@ -19,7 +19,6 @@
 
 
 ### **To run server in development mode**
--       See envSample file for enviromental variables
 -       pull this branch
 -       npm install
 -       npm run start

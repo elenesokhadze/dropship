@@ -2,17 +2,20 @@ import styled from "styled-components";
 
 export const MenuContainer = styled.div`
  position: fixed;
- width: 53px;
- border-right: 2px solid ${({theme}) => theme.colors.primary.grey.tint};
+ width: 56px;
+ border-right: 2px solid ${({theme}) => theme.colors.primary.grey.main};
  height: 100%;
+ @media (max-width: ${({theme}) => `${theme.responsive.mobile}px`}) {
+  display: none;
+ }
 `;
 
 export const MenuNav = styled.ul`
- background: ${({theme}) => theme.colors.primary.white.main};
+ background: ${({theme}) => theme.colors.primary.grey.tint};
  height: 100%;
  display: flex;
  flex-direction: column;
- gap: 31px;
+ gap: 32px;
  padding-left: 0;
  align-items: center;
  cursor: pointer;
@@ -32,13 +35,13 @@ export const MenuItemCircled = styled.li`
 
 export const MenuLogo = styled.img`
  height: 20px;
- width: 39px;
- border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.tint};
+ width: 40px;
+ border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.main};
  padding: 20px 5px;
 `;
 
 export const MenuUserImage = styled.img`
  border-radius: 50%;
- height: 25px;
- width: 25px;
+ height: 24px;
+ width: 24px;
 `;

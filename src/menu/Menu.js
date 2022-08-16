@@ -12,12 +12,10 @@ import {
 
 const Menu = () => {
  return (
-  <MenuContainer>
+  <MenuContainer id="MenuContainer">
    <MenuNav>
     <Link to="/">
-     <li>
-      <MenuLogo src={logo} alt="dropship" />
-     </li>
+     <MenuLogo src={logo} alt="dropship" />
     </Link>
     <Link to="/user">
      <MenuItemCircled>
@@ -25,14 +23,10 @@ const Menu = () => {
      </MenuItemCircled>
     </Link>
     <Link to="/catalog">
-     <li>
-      <i className="fas fa-list-ul"></i>
-     </li>
+     <i className="fas fa-list-ul"></i>
     </Link>
     <Link to="/cart">
-     <li>
-      <i className="fas fa-shopping-cart"></i>
-     </li>
+     <i className="fas fa-shopping-cart"></i>
     </Link>
    </MenuNav>
   </MenuContainer>

@@ -41,7 +41,7 @@ export const LandingBannerLogo = styled.img`
  }
 `;
 
-export const LandingHeaderBurger = styled.div`
+export const LandingHeaderBurgerContainer = styled.div`
  display: none;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   display: block;

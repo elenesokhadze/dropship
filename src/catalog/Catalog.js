@@ -35,7 +35,7 @@ const Catalog = () => {
   return <Spinner />;
  } else {
   return (
-   <CatalogContainer>
+   <CatalogContainer id="CatalogContainer">
     {products.map((product, index) => (
      <Product
       key={product.id}

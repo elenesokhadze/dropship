@@ -30,12 +30,12 @@ const Header = () => {
  };
 
  return (
-  <HeaderOuterContainer>
-   <HeaderContainer>
-    <HeaderLeftContainer>
-     <HeaderSelectContainer>
+  <HeaderOuterContainer id="HeaderOuterContainer">
+   <HeaderContainer id="HeaderContainer">
+    <HeaderLeftContainer id="HeaderLeftContainer">
+     <HeaderSelectContainer id="HeaderSelectContainer">
       <PrimaryButton onClick={selectAllHandler}>select all</PrimaryButton>
-      <HeaderTextContainer>
+      <HeaderTextContainer id="HeaderTextContainer">
        selected {selectedProducts.length} out of {products.length} products
       </HeaderTextContainer>
       {selectedProducts.length > 0 ? (
@@ -45,7 +45,7 @@ const Header = () => {
       )}
      </HeaderSelectContainer>
     </HeaderLeftContainer>
-    <HeaderRightContainer>
+    <HeaderRightContainer id="HeaderRightContainer">
      <Search />
      <PrimaryButton
       onClick={() =>

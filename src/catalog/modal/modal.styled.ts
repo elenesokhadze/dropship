@@ -11,6 +11,10 @@ export const ModalContainer = styled.div`
  width: 100%;
  border-radius: 16px;
  padding: 32px 32px 72px 32px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  box-sizing: border-box;
+  height: 100vh;
+ }
 `;
 
 export const OverlayContainer = styled.div`
@@ -28,6 +32,11 @@ export const ModalDialogContainer = styled.div`
  display: flex;
  gap: 20px;
  padding: 20px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  flex-direction: column;
+  padding: 0;
+  gap: 40px;
+ }
 `;
 
 export const ModalImageContainer = styled.div`
@@ -37,8 +46,9 @@ export const ModalImageContainer = styled.div`
   transform: scale(1.2);
  }
  img {
-  width: 336px;
-  height: 336px;
+  max-width: 336px;
+  width: 100%;
+  height: auto;
  }
 `;
 
@@ -78,6 +88,9 @@ export const ModalItemBlue = styled.span`
 export const ModalTitle = styled.div`
  margin-top: 30px;
  font-size: 18px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  margin-top: 0;
+ }
 `;
 
 export const ModalDescriptionContainer = styled.div`
@@ -86,6 +99,9 @@ export const ModalDescriptionContainer = styled.div`
  font-size: 16px;
  display: flex;
  justify-content: space-between;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
 `;
 
 export const ModalDetailsContainer = styled.div`
@@ -113,11 +129,19 @@ export const ModalCloseContainer = styled.div`
    background: ${({theme}) => theme.colors.primary.grey.main};
   }
  }
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+ }
 `;
 
 export const ModalTabsContainer = styled.div`
  display: flex;
- gap: 35px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  font-size: 16px;
+  padding: 20px 0;
+ }
 `;
 
 export const ModalDialogLeftContainer = styled.div`
@@ -127,6 +151,11 @@ export const ModalDialogLeftContainer = styled.div`
  justify-content: space-between;
  padding: 20px;
  gap: 30px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  padding: 0;
+  width: 100%;
+  gap: 40px;
+ }
 `;
 
 export const ModalDialogRightContainer = styled.div`
@@ -135,4 +164,9 @@ export const ModalDialogRightContainer = styled.div`
  gap: 20px;
  padding: 20px;
  width: min(656px, 50%);
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  padding: 0;
+  width: 100%;
+  gap: 8px;
+ }
 `;

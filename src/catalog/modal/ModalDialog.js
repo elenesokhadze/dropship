@@ -4,7 +4,7 @@ import {ModalDialogRight} from "./ModalDialogRight";
 
 export const ModalDialog = ({product, onClose}) => {
  return (
-  <ModalDialogContainer>
+  <ModalDialogContainer id="ModalDialogContainer">
    <ModalDialogLeft product={product} />
    <ModalDialogRight product={product} onClose={onClose} />
   </ModalDialogContainer>

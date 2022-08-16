@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const HeaderOuterContainer = styled.div`
- position: fixed;
- z-index: 1000;
  background-color: ${({theme}) => theme.colors.primary.grey.tint};
- width: 83%;
- margin-left: 320px;
+ width: calc(100% - 48px);
+ margin-left: 48px;
+ box-sizing: border-box;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  margin-left: 0;
+  width: 100%;
+ }
 `;
 
 export const HeaderContainer = styled.div`
@@ -13,6 +16,7 @@ export const HeaderContainer = styled.div`
  justify-content: space-between;
  gap: 20px;
  height: 70px;
+ padding: 0 40px;
 `;
 
 export const HeaderTextContainer = styled.div`
@@ -23,7 +27,6 @@ export const HeaderTextContainer = styled.div`
 export const HeaderLeftContainer = styled.div`
  display: flex;
  justify-content: space-between;
- padding-left: 2%;
 `;
 
 export const HeaderSelectContainer = styled.div`
@@ -38,7 +41,9 @@ export const HeaderRightContainer = styled.div`
  display: flex;
  align-items: center;
  gap: 20px;
- padding-right: 3%;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
 `;
 
 export const SearchButton = styled.button`
@@ -68,21 +73,20 @@ export const SearchInput = styled.input`
  }
 `;
 
-export const FaqContainer = styled.div`
- cursor: pointer;
- margin-right: 120px;
-`;
-
 export const SortContainer = styled.div`
  background-color: ${({theme}) => theme.colors.primary.white.main};
- height: 35px;
  display: flex;
  align-items: center;
- padding-left: 4%;
- gap: 5px;
+ justify-content: space-between;
+ gap: 8px;
  width: 100%;
- padding-top: 1%;
+ padding: 24px 40px;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.shade};
+ box-sizing: border-box;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  justify-content: center;
+  padding: 8px 40px;
+ }
 `;
 
 export const SortSelect = styled.select`

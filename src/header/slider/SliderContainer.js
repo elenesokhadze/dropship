@@ -1,9 +1,9 @@
 import {useState} from "react";
 import RangeSlider from "./RangeSlider";
-import {filterProducts} from "../redux/products/ProductActions";
+import {filterProducts} from "../../redux/products/ProductActions";
 import {useDispatch, useSelector} from "react-redux";
-import {PrimaryButton} from "../button/PrimaryButton";
-import {SliderOuterContainer, SliderInnerContainer} from "./aside.styled";
+import {PrimaryButton} from "../../button/PrimaryButton";
+import {SliderOuterContainer, SliderButtonContainer} from "./slider.styled";
 
 const SliderContainer = () => {
  const products = useSelector((state) => state.product.products);
@@ -29,26 +29,16 @@ const SliderContainer = () => {
  };
 
  return (
-  <SliderOuterContainer>
-   <SliderInnerContainer>
-    <RangeSlider
-     text="PRICE RANGE"
-     handleFilterPrice={handleFilterPrice}
-     value={value}
-     handleChange={handleChange}
-    />
-    <RangeSlider
-     text="PROFIT RANGE"
-     handleFilterPrice={handleFilterPrice}
-     value={value}
-     handleChange={handleChange}
-    />
-   </SliderInnerContainer>
-   <div
-    style={{display: "flex", justifyContent: "center", alignItems: "center"}}
-   >
-    <PrimaryButton onClick={resethandleFilterPrice}>reset filter</PrimaryButton>
-   </div>
+  <SliderOuterContainer id="SliderOuterContainer">
+   <RangeSlider
+    text="PRICE RANGE"
+    handleFilterPrice={handleFilterPrice}
+    value={value}
+    handleChange={handleChange}
+   />
+   <SliderButtonContainer>
+    <PrimaryButton onClick={resethandleFilterPrice}>reset</PrimaryButton>
+   </SliderButtonContainer>
   </SliderOuterContainer>
  );
 };

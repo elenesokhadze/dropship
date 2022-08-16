@@ -24,10 +24,7 @@ export const ModalDialogRight = ({onClose, product}) => {
     </ModalDescriptionSupplier>
    </ModalDescriptionContainer>
    <ModalTitle>{product.title}</ModalTitle>
-   <ModalTabsContainer>
-    <div>Product Details</div>
-    <div>Shipping Rates</div>
-   </ModalTabsContainer>
+   <ModalTabsContainer>Product Details</ModalTabsContainer>
    <ModalDetailsContainer>
     <span>{product.description}</span>
    </ModalDetailsContainer>

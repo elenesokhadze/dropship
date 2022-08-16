@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useHistory} from "react-router-dom";
 import {Formik, Form} from "formik";
 import * as Yup from "yup";
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
@@ -22,7 +23,7 @@ import {ConfirmPasswordTextfield} from "./auth-textfields/ConfirmPasswordTextfie
 function Register() {
  const [email, setEmail] = useState(null);
  const [password, setPassword] = useState(null);
-
+ const history = useHistory();
  const performRegister = (values, {setSubmitting}) => {
   setEmail(values.email);
   setPassword(values.password);
@@ -73,24 +74,24 @@ function Register() {
     return (
      <Form>
       <FormWrapper id="FormWrapper">
-       <FormDialog>
-        <FormHeader>
-         <FormLogo>
+       <FormDialog id="FormDialog">
+        <FormHeader id="FormHeader">
+         <FormLogo id="FormLogo" onClick={() => history.push("/")}>
           <img src={logo} alt="dropship" />
          </FormLogo>
-         <FormTitle>Sign Up</FormTitle>
+         <FormTitle id="FormTitle">Sign Up</FormTitle>
         </FormHeader>
         <EmailTextfield {...formik} />
         <PasswordTextfield {...formik} />
         <ConfirmPasswordTextfield {...formik} />
-        <AuthButtonContainer>
+        <AuthButtonContainer id="AuthButtonContainer">
          <PrimaryButton type="submit" disabled={!formik.isValid}>
           Sign Up
          </PrimaryButton>
         </AuthButtonContainer>
-        <LoginInfo>
+        <LoginInfo id="LoginInfo">
          Already have an account?{" "}
-         <BackToSignup href="/login">Sign in</BackToSignup>
+         <BackToSignup href="/login">Log in</BackToSignup>
         </LoginInfo>
        </FormDialog>
       </FormWrapper>

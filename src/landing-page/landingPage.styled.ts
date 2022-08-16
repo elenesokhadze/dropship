@@ -17,11 +17,35 @@ export const LandingHeaderContainer = styled.div`
  z-index: 10;
  width: 100%;
  opacity: 0.7;
+ box-sizing: border-box;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  justify-content: space-between;
+  padding: 10px 40px;
+ }
 `;
 
 export const LandingHeaderNav = styled.div`
  display: flex;
  gap: 30px;
+ a {
+  text-decoration: none;
+ }
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
+`;
+
+export const LandingBannerLogo = styled.img`
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  width: 30%;
+ }
+`;
+
+export const LandingHeaderBurger = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: block;
+ }
 `;
 
 export const LandingImageContainer = styled.div`
@@ -29,6 +53,12 @@ export const LandingImageContainer = styled.div`
  width: 100%;
  img {
   height: 100%;
+  width: 100%;
+ }
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  img {
+   object-fit: cover;
+  }
  }
 `;
 export const LandingSignupContainer = styled.div`
@@ -59,6 +89,11 @@ export const LandingContentTitle = styled.h4`
  margin: 0;
  font-weight: 400;
  font-size: 28px;
+ text-transform: uppercase;
+ text-align: center;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  font-size: 20px;
+ }
 `;
 
 export const LandingBannerContainer = styled.div`

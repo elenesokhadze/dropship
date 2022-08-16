@@ -1,14 +1,21 @@
 import {Route, Redirect} from "react-router-dom";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useState} from "react";
 
 const PrivateRoute = ({component: RouteComponent, ...rest}) => {
- let email = JSON.parse(localStorage.getItem("Email") || null);
- let password = JSON.parse(localStorage.getItem("Password") || null);
-
+ const auth = getAuth();
+ const [currentUser, setCurrentUser] = useState(null);
+ onAuthStateChanged(auth, (user) => {
+  if (user) {
+   setCurrentUser(user);
+   // ...
+  }
+ });
  return (
   <Route
    {...rest}
    render={(routeProps) =>
-    email !== null && password !== null ? (
+    currentUser !== null ? (
      <RouteComponent {...routeProps} />
     ) : (
      <Redirect to={"/login"} />

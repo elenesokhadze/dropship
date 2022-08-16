@@ -1,17 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
-  font: normal 14px Arial, Verdana, Helvetica, sans-serif;
-  overflow: hidden;
+ margin: 0;
+ padding: 0;
+ font: normal 14px Arial, Verdana, Helvetica, sans-serif;
+ overflow: hidden;
+ box-sizing: border-box;
 }
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy-Bold"),
-    url("./fonts/Gilroy-Bold.ttf") format("Gilroy-Bold"),
-    url("./fonts/Gilroy-Heavy.ttf") format("Gilroy-Heavy"),
-    url("./fonts/Gilroy-Light.ttf") format("Gilroy-Light"),
-    url("./fonts/Gilroy-Medium.ttf") format("Gilroy-Medium"),
-    url("./fonts/Gilroy-Regular.ttf") format("Gilroy-Regular");
+ font-family: "Gilroy";
+ src: local("Gilroy-Bold"), url("./fonts/Gilroy-Bold.ttf") format("Gilroy-Bold"),
+  url("./fonts/Gilroy-Heavy.ttf") format("Gilroy-Heavy"),
+  url("./fonts/Gilroy-Light.ttf") format("Gilroy-Light"),
+  url("./fonts/Gilroy-Medium.ttf") format("Gilroy-Medium"),
+  url("./fonts/Gilroy-Regular.ttf") format("Gilroy-Regular");
 }
 
 h1,
@@ -19,9 +19,9 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Gilroy-Bold" !important;
+ font-family: "Gilroy-Bold" !important;
 }
 
 *:focus {
-  outline: none;
+ outline: none;
 }

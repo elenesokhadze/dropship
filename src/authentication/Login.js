@@ -62,21 +62,21 @@ function LoginForm() {
     return (
      <Form>
       <FormWrapper id="FormWrapper">
-       <FormDialog>
-        <FormHeader>
-         <FormLogo>
+       <FormDialog id="FormDialog">
+        <FormHeader id="FormHeader">
+         <FormLogo id="FormLogo" onClick={() => history.push("/")}>
           <img src={logo} alt="dropship" />
          </FormLogo>
-         <FormTitle>Members Log In</FormTitle>
+         <FormTitle id="FormTitle">Log In</FormTitle>
         </FormHeader>
         <EmailTextfield {...formik} />
         <PasswordTextfield {...formik} />
-        <AuthButtonContainer>
+        <AuthButtonContainer id="AuthButtonContainer">
          <PrimaryButton type="submit" disabled={!formik.isValid}>
           Submit
          </PrimaryButton>
         </AuthButtonContainer>
-        <LoginInfo>
+        <LoginInfo id="LoginInfo">
          Don't have an account?{" "}
          <BackToSignup href="/register">Sign Up</BackToSignup>
         </LoginInfo>

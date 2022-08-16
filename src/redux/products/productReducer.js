@@ -8,7 +8,7 @@ import {
  SELECT_ALL_PRODUCT,
  REMOVE_ALL_PRODUCT,
 } from "./ProductActionTypes";
-import {sortProducts} from "../../filterMethods/sortProducts";
+import {sortProducts} from "../../filter-methods/sortProducts";
 
 const initialState = {
  products: [],

@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Formik, Form} from "formik";
 import * as Yup from "yup";
@@ -21,16 +20,12 @@ import {PasswordTextfield} from "./auth-textfields/PasswordTextfield";
 import {ConfirmPasswordTextfield} from "./auth-textfields/ConfirmPasswordTextfield";
 
 function Register() {
- const [email, setEmail] = useState(null);
- const [password, setPassword] = useState(null);
  const history = useHistory();
  const performRegister = (values, {setSubmitting}) => {
-  setEmail(values.email);
-  setPassword(values.password);
-  localStorage.setItem("Email", JSON.stringify(email));
-  localStorage.setItem("Password", JSON.stringify(password));
+  localStorage.setItem("Email", JSON.stringify(values.email));
+  localStorage.setItem("Password", JSON.stringify(values.password));
 
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, values.email, values.password)
    .then((userCredential) => {
     // Signed in
     const user = userCredential.user;

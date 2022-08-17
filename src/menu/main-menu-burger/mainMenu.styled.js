@@ -5,7 +5,7 @@ export const MenuContainer = styled.div`
  width: 56px;
  border-right: 2px solid ${({theme}) => theme.colors.primary.grey.main};
  height: 100%;
- @media (max-width: ${({theme}) => `${theme.responsive.mobile}px`}) {
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   padding-top: 40px;
   width: 80px;
  }
@@ -23,7 +23,7 @@ export const MenuNav = styled.ul`
  list-style: none;
  margin: 0;
  padding-top: 10px;
- @media (max-width: ${({theme}) => `${theme.responsive.mobile}px`}) {
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   transform: ${({open}) => (open ? "translateX(0)" : "translateX(100%)")};
  }
 `;

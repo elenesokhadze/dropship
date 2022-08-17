@@ -1,3 +1,4 @@
+import {useCallback} from "react";
 import {useHistory} from "react-router-dom";
 import {Formik, Form} from "formik";
 import * as Yup from "yup";
@@ -21,6 +22,11 @@ import {ConfirmPasswordTextfield} from "./auth-textfields/ConfirmPasswordTextfie
 
 function Register() {
  const history = useHistory();
+
+ const signedUp = useCallback(() => {
+  history.push("/catalog");
+ }, [history]);
+
  const performRegister = (values, {setSubmitting}) => {
   localStorage.setItem("Email", JSON.stringify(values.email));
   localStorage.setItem("Password", JSON.stringify(values.password));
@@ -28,6 +34,7 @@ function Register() {
   createUserWithEmailAndPassword(auth, values.email, values.password)
    .then((userCredential) => {
     // Signed in
+    signedUp();
     const user = userCredential.user;
     console.log(user);
     alert("Successfully created an account");

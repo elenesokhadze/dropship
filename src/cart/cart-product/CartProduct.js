@@ -15,7 +15,7 @@ const CartProduct = ({image, title, qty, price, id}) => {
 
  return (
   <CartProductContainer id="CartProductContainer">
-   <CartProductImageContainer>
+   <CartProductImageContainer id="CartHeaderContainer">
     <img src={image} alt={image} />
    </CartProductImageContainer>
    <CartProductItemContainer>{title}</CartProductItemContainer>

@@ -24,7 +24,7 @@ import {theme} from "../theme";
 import {useState} from "react";
 
 const Header = () => {
- const [isSelectOpen, setIsSelectOpen] = useState(false);
+ const [isSelectOpen, setIsSelectOpen] = useState(true);
  const products = useSelector((state) => state.product.products);
  const selectedProducts = useSelector(
   (state) => state.product.selectedProducts

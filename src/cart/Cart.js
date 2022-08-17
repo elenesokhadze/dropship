@@ -15,9 +15,9 @@ const Cart = () => {
  return (
   <>
    <Menu />
-   <CartContainer>
+   <CartContainer id="CartContainer">
     <CartHeadingContainer>
-     <h3>SHOPPING CART (0)</h3>
+     <h3>shopping cart</h3>
     </CartHeadingContainer>
     <CartHeader />
     <CartBody />

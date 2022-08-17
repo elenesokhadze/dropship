@@ -21,6 +21,7 @@ export const MobileSelectButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
  }
 `;
 
@@ -38,6 +39,7 @@ export const MobileAddContainer = styled.div`
   color: ${({theme}) => theme.colors.primary.white.main};
   background-color: ${({theme}) => theme.colors.secondary.blue.main};
   text-transform: uppercase;
+  cursor: pointer;
  }
 `;
 

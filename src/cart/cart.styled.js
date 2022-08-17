@@ -6,6 +6,10 @@ export const CartContainer = styled.div`
  margin-left: 3%;
  flex-direction: column;
  background-color: ${({theme}) => theme.colors.primary.grey.tint};
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  margin: 0;
+  width: 100%;
+ }
 `;
 export const CartHeadingContainer = styled.div`
  display: flex;
@@ -15,6 +19,7 @@ export const CartHeadingContainer = styled.div`
  padding: 0 40px 0 40px;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.shade};
  height: 74px;
+ text-transform: uppercase;
 `;
 
 export const CartHeaderContainer = styled.div`
@@ -32,10 +37,22 @@ export const CartHeaderContainer = styled.div`
  font-weight: 600;
  text-transform: uppercase;
  text-align: center;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  box-sizing: border-box;
+  justify-content: initial;
+  width: 100%;
+  gap: 80px;
+  overflow-y: scroll;
+  padding: 0 40px;
+  margin: 16px 0;
+ }
 `;
 
 export const CartHeaderItemContainer = styled.div`
  flex: 1;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  min-width: 120px;
+ }
 `;
 
 export const CartBodyContainer = styled.div`
@@ -66,6 +83,10 @@ export const CartFooterContainer = styled.div`
  background: ${({theme}) => theme.colors.primary.white.main};
  margin: 16px;
  height: 80px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  gap: 80px;
+  overflow-y: scroll;
+ }
 `;
 
 export const CartFooterPriceContainer = styled.div`
@@ -78,6 +99,14 @@ export const CartFooterPriceContainer = styled.div`
  font-size: 18px;
  color: ${({theme}) => theme.colors.primary.blue.shade};
  text-transform: uppercase;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  gap: 80px;
+  font-size: 14px;
+  padding: 0;
+  div {
+   min-width: 120px;
+  }
+ }
 `;
 
 export const CartFooterPriceItem = styled.span`

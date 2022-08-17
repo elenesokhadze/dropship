@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 export const UserContainer = styled.div`
  display: flex;
- width: 97%;
- margin-left: 3%;
+ width: 100%;
  flex-direction: column;
+ margin: 0 3%;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  margin: 0;
+ }
 `;
 
 export const UserInnerContainer = styled.div`
@@ -16,6 +19,7 @@ export const UserInnerContainer = styled.div`
  display: flex;
  flex-direction: column;
  align-items: center;
+ padding: 0 40px;
 `;
 
 export const UserHeading = styled.div`
@@ -23,15 +27,22 @@ export const UserHeading = styled.div`
  justify-content: space-between;
  align-items: center;
  text-transform: uppercase;
- width: 95%;
- padding: 0 40px 0 40px;
+ width: 98%;
+ padding: 0 40px;
+ box-sizing: border-box;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.tint};
  height: 74px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  padding: 0 16px;
+ }
 `;
 
 export const UserDivider = styled.div`
  padding: 32px;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.tint};
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
 `;
 
 export const UserInfoContainer = styled.div`
@@ -39,7 +50,7 @@ export const UserInfoContainer = styled.div`
  align-items: center;
  justify-content: center;
  width: 100%;
- gap: 15px;
+ gap: 16px;
  flex-direction: column;
  padding: 10px;
  max-width: 500px;
@@ -67,4 +78,18 @@ export const UserTextfieldContainer = styled.div`
  justify-content: center;
  gap: 20px;
  width: 100%;
+`;
+
+export const LogoutButtonMobile = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: block;
+ }
+`;
+
+export const LogoutButtonDesktop = styled.div`
+ display: block;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
 `;

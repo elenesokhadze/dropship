@@ -12,6 +12,15 @@ export const CartProductContainer = styled.div`
  overflow: hidden;
  padding-left: 2%;
  min-height: 240px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  box-sizing: border-box;
+  justify-content: initial;
+  width: 100%;
+  gap: 80px;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  padding: 0 40px;
+ }
 `;
 
 export const CartProductImageContainer = styled.div`
@@ -20,11 +29,21 @@ export const CartProductImageContainer = styled.div`
   max-width: 120px;
   width: 100%;
  }
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  img {
+   min-width: 120px;
+  }
+  min-width: 120px;
+ }
 `;
 
 export const CartProductItemContainer = styled.div`
  flex: 1;
  text-align: center;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  text-align: left;
+  min-width: 120px;
+ }
 `;
 
 export const ProductCounterContainer = styled.div`

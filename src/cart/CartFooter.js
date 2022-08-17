@@ -20,7 +20,7 @@ export const CartFooter = () => {
    <Link to="./catalog" style={{textDecoration: "none"}}>
     <PrimaryButton>Continue Shopping</PrimaryButton>
    </Link>
-   <CartFooterPriceContainer>
+   <CartFooterPriceContainer id="CartFooterPriceContainer">
     <div>
      balance: <CartFooterPriceItem>$0.00</CartFooterPriceItem>
     </div>

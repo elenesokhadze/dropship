@@ -14,6 +14,7 @@ export const ModalContainer = styled.div`
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   box-sizing: border-box;
   height: 100vh;
+  border-radius: 0;
  }
 `;
 
@@ -50,11 +51,21 @@ export const ModalImageContainer = styled.div`
   width: 100%;
   height: auto;
  }
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  max-width: 184px;
+  align-self: center;
+  &:hover {
+   transform: scale(1);
+  }
+ }
 `;
 
 export const ModalItem = styled.li`
  display: flex;
  flex-direction: column;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  font-size: 16px;
+ }
 `;
 
 export const ModalPriceContaner = styled.ul`
@@ -68,6 +79,10 @@ export const ModalPriceContaner = styled.ul`
  border: 1.5px solid ${({theme}) => theme.colors.primary.white.main};
  justify-content: center;
  padding: 0;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  gap: 0;
+  justify-content: space-between;
+ }
 `;
 
 export const ModalItemGrey = styled.span`
@@ -154,7 +169,7 @@ export const ModalDialogLeftContainer = styled.div`
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   padding: 0;
   width: 100%;
-  gap: 40px;
+  gap: 0;
  }
 `;
 

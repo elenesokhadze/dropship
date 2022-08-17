@@ -21,6 +21,7 @@ export const LandingHeaderContainer = styled.div`
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   justify-content: space-between;
   padding: 10px 40px;
+  opacity: 1;
  }
 `;
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
- position: fixed;
+ position: absolute;
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
@@ -19,7 +19,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const OverlayContainer = styled.div`
- position: fixed;
+ position: absolute;
  top: 0;
  left: 0;
  right: 0;
@@ -165,11 +165,11 @@ export const ModalDialogLeftContainer = styled.div`
  flex-direction: column;
  justify-content: space-between;
  padding: 20px;
- gap: 30px;
+ gap: 32px;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   padding: 0;
   width: 100%;
-  gap: 0;
+  gap: 16px;
  }
 `;
 

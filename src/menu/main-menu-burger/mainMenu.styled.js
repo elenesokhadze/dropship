@@ -19,11 +19,10 @@ export const MenuNav = styled.ul`
  gap: 32px;
  padding-left: 0;
  align-items: center;
- cursor: pointer;
  list-style: none;
  margin: 0;
  padding-top: 10px;
- @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+ @media (max-width: ${({theme}) => `${theme.responsive.mobile}px`}) {
   transform: ${({open}) => (open ? "translateX(0)" : "translateX(100%)")};
  }
 `;

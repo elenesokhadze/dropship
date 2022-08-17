@@ -13,8 +13,8 @@ import {
 export const MainMenu = ({open}) => {
  return (
   <MenuContainer id="MenuContainer" open={open}>
-   <MenuNav open={open}>
-    <Link to="/">
+   <MenuNav id="MenuNav" open={open}>
+    <Link to="/catalog">
      <MenuLogo src={logo} alt="dropship" />
     </Link>
     <Link to="/user">

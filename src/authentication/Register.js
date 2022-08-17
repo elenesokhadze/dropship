@@ -24,7 +24,7 @@ function Register() {
  const history = useHistory();
 
  const signedUp = useCallback(() => {
-  history.push("/catalog");
+  history.push("/login");
  }, [history]);
 
  const performRegister = (values, {setSubmitting}) => {

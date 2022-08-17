@@ -12,6 +12,7 @@ export const ProductContainer = styled.div`
  position: relative;
  box-sizing: content-box;
  padding-bottom: 20px;
+ cursor: pointer;
  &:hover {
   border: 2px solid ${({theme}) => theme.colors.primary.blue.main};
  }

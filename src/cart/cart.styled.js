@@ -16,10 +16,13 @@ export const CartHeadingContainer = styled.div`
  justify-content: space-between;
  align-items: center;
  width: 100%;
- padding: 0 40px 0 40px;
+ padding: 0 40px;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.shade};
  height: 74px;
  text-transform: uppercase;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  padding: 0 24px;
+ }
 `;
 
 export const CartHeaderContainer = styled.div`
@@ -43,7 +46,7 @@ export const CartHeaderContainer = styled.div`
   width: 100%;
   gap: 80px;
   overflow-y: scroll;
-  padding: 0 40px;
+  padding: 0 24px;
   margin: 16px 0;
  }
 `;
@@ -73,7 +76,7 @@ export const CartFooterContainer = styled.div`
  display: flex;
  height: 100%;
  align-items: center;
- padding: 0 40px 0 40px;
+ padding: 0 40px;
  font-weight: 600;
  justify-content: space-between;
  color: ${({theme}) => theme.colors.primary.blue.shade};
@@ -86,6 +89,7 @@ export const CartFooterContainer = styled.div`
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   gap: 80px;
   overflow-y: scroll;
+  padding: 0 24px;
  }
 `;
 

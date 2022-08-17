@@ -11,8 +11,7 @@ export const CatalogContainer = styled.div`
  display: flex;
  justify-content: center;
  flex-wrap: wrap;
- gap: 25px;
- cursor: pointer;
+ gap: 24px;
  font-size: 16px;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   width: 100%;

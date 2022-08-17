@@ -16,7 +16,7 @@ const Cart = () => {
   <>
    <Menu />
    <CartContainer id="CartContainer">
-    <CartHeadingContainer>
+    <CartHeadingContainer id="CartHeadingContainer">
      <h3>shopping cart</h3>
     </CartHeadingContainer>
     <CartHeader />

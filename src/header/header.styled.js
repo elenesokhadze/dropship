@@ -11,12 +11,46 @@ export const HeaderOuterContainer = styled.div`
  }
 `;
 
+export const MobileSelectButton = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  background-color: ${({theme}) => theme.colors.secondary.blue.main};
+  height: 32px;
+  width: 32px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+`;
+
+export const MobileAddContainer = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  margin-right: 24px;
+  display: flex;
+  border-radius: 4px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: ${({theme}) => theme.colors.primary.white.main};
+  background-color: ${({theme}) => theme.colors.secondary.blue.main};
+  text-transform: uppercase;
+ }
+`;
+
 export const HeaderContainer = styled.div`
  display: flex;
  justify-content: space-between;
  gap: 20px;
  height: 70px;
  padding: 0 40px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: flex;
+  justify-content: initial;
+ }
 `;
 
 export const HeaderTextContainer = styled.div`
@@ -29,6 +63,43 @@ export const HeaderLeftContainer = styled.div`
  justify-content: space-between;
 `;
 
+export const HeaderLeftMobile = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+ }
+`;
+
+export const HeaderRightMobile = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+ }
+`;
+
+export const HeaderLeftDesktop = styled.div`
+ display: flex;
+ gap: 24px;
+ align-items: center;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
+`;
+
+export const HeaderRightDesktop = styled.div`
+ display: flex;
+ align-items: center;
+ gap: 24px;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: none;
+ }
+`;
 export const HeaderSelectContainer = styled.div`
  display: flex;
  gap: 10px;
@@ -41,35 +112,40 @@ export const HeaderRightContainer = styled.div`
  display: flex;
  align-items: center;
  gap: 20px;
- @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
-  display: none;
- }
 `;
 
 export const SearchButton = styled.button`
- background-repeat: no-repeat;
- background-size: cover;
- transform: translateX(-45%);
- border: solid 2px ${({theme}) => theme.colors.primary.grey.main};
- border-left: none;
- background-color: ${({theme}) => theme.colors.primary.white.main};
- border-radius: 12px;
+ border: 0;
+ background: none;
  color: ${({theme}) => theme.colors.primary.grey.shade};
+ position: absolute;
+ top: 50%;
+ transform: translate(0, -50%);
+ right: 8px;
  cursor: pointer;
 `;
 
 export const SearchInputContainer = styled.form`
+ position: relative;
  display: flex;
- width: 435px;
+ max-width: 435px;
+ width: 100%;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  max-width: 100%;
+ }
 `;
 export const SearchInput = styled.input`
  border: solid 2px ${({theme}) => theme.colors.primary.grey.main};
- height: 33px;
- width: 450px;
- padding-left: 3%;
+ height: 32px;
+ max-width: 450px;
+ width: 100%;
+ padding-left: 16px;
  border-radius: 12px;
  &:focus {
   outline: none;
+ }
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  max-width: 100%;
  }
 `;
 

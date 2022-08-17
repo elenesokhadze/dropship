@@ -1,11 +1,12 @@
 import {BurgerMenuContainer} from "./burgerMenu.styled";
 
-const BurgerMenu = ({open, setOpen}) => {
+const BurgerMenu = ({open, setOpen, isDark}) => {
  return (
   <BurgerMenuContainer
    open={open}
    onClick={() => setOpen(!open)}
    id="BurgerMenuContainer"
+   isDark={isDark}
   >
    <div />
    <div />

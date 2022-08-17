@@ -28,3 +28,10 @@ export const LandingMenuContainer = styled.nav`
   }
  }
 `;
+
+export const LandingHeaderBurgerContainer = styled.div`
+ display: none;
+ @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
+  display: block;
+ }
+`;

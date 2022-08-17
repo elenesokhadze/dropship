@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../theme";
 
 export const BurgerMenuContainer = styled.button`
  top: 5%;
@@ -18,7 +19,10 @@ export const BurgerMenuContainer = styled.button`
  div {
   width: 2rem;
   height: 0.25rem;
-  background: ${({theme}) => theme.colors.primary.white.main};
+  background: ${({isDark}) =>
+   isDark
+    ? `${theme.colors.secondary.blue.main}`
+    : `${theme.colors.primary.white.main}`};
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;

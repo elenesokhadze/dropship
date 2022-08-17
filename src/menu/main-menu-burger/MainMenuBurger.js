@@ -1,9 +1,12 @@
 import {useState, useRef, useEffect} from "react";
 import BurgerMenu from "../../burger/BurgerMenu";
-import LandingMenu from "./LandingMenu";
-import {LandingHeaderBurgerContainer} from "./landingMenu.styled";
+import {
+ MainBurgerContainer,
+ MainBurgerInnerContainer,
+} from "./mainMenuBurger.styled";
+import {MainMenu} from "./MainMenu";
 
-export const LandingHeaderBurger = () => {
+export const MainMenuBurger = () => {
  const [open, setOpen] = useState(false);
  const burgerRef = useRef();
 
@@ -25,12 +28,11 @@ export const LandingHeaderBurger = () => {
  };
 
  return (
-  <LandingHeaderBurgerContainer
-   ref={burgerRef}
-   id="LandingHeaderBurgerContainer"
-  >
-   <LandingMenu open={open} />
-   <BurgerMenu open={open} setOpen={setOpen} />
-  </LandingHeaderBurgerContainer>
+  <MainBurgerContainer ref={burgerRef} id="MainBurgerContainer">
+   <MainMenu open={open} />
+   <MainBurgerInnerContainer id="MainBurgerInnerContainer">
+    <BurgerMenu open={open} setOpen={setOpen} isDark={true} />
+   </MainBurgerInnerContainer>
+  </MainBurgerContainer>
  );
 };

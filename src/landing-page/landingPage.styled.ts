@@ -42,13 +42,6 @@ export const LandingBannerLogo = styled.img`
  }
 `;
 
-export const LandingHeaderBurgerContainer = styled.div`
- display: none;
- @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
-  display: block;
- }
-`;
-
 export const LandingImageContainer = styled.div`
  height: 100vh;
  width: 100%;

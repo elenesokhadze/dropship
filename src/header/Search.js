@@ -20,14 +20,14 @@ const Search = () => {
  };
 
  return (
-  <SearchInputContainer onSubmit={handleSearch}>
+  <SearchInputContainer onSubmit={handleSearch} id="SearchInputContainer">
    <SearchInput
     itemID="searchQuery"
     type="text"
     placeholder="Search..."
     onChange={handleSearchInput}
    />
-   <SearchButton>
+   <SearchButton id="SearchButton">
     <SearchIcon />
    </SearchButton>
   </SearchInputContainer>

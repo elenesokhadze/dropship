@@ -1,4 +1,3 @@
-import "./menu.css";
 import {MainMenuBurger} from "./main-menu-burger/MainMenuBurger";
 
 const Menu = () => {

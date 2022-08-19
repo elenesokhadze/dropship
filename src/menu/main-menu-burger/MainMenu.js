@@ -1,4 +1,3 @@
-import "../menu.css";
 import logo from "../../assets/logo.png";
 import user from "../../assets/user.jpg";
 import {NavLink} from "react-router-dom";
@@ -8,7 +7,10 @@ import {
  MenuLogo,
  MenuUserImage,
  MenuLink,
+ MenuIconContainer,
 } from "./mainMenu.styled";
+import ListRoundedIcon from "@material-ui/icons/ListRounded";
+import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 
 export const MainMenu = ({open}) => {
  return (
@@ -21,10 +23,14 @@ export const MainMenu = ({open}) => {
      <MenuUserImage src={user} alt="user-image" />
     </MenuLink>
     <MenuLink to="/catalog">
-     <i className="fas fa-list-ul"></i>
+     <MenuIconContainer>
+      <ListRoundedIcon />
+     </MenuIconContainer>
     </MenuLink>
     <MenuLink to="/cart">
-     <i className="fas fa-shopping-cart"></i>
+     <MenuIconContainer>
+      <ShoppingCartRoundedIcon />
+     </MenuIconContainer>
     </MenuLink>
    </MenuNav>
   </MenuContainer>

@@ -1,6 +1,5 @@
-import "./user.css";
 import {useHistory} from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import {SecondaryButton} from "../button/SecondaryButton";
 
 const LogoutButton = () => {
  const history = useHistory();
@@ -12,16 +11,7 @@ const LogoutButton = () => {
 
  return (
   <>
-   <Button
-    variant="contained"
-    color="primary"
-    onClick={performLogout}
-    className="logout"
-    type="button"
-    style={{backgroundColor: "#E6EEFC", color: "#79A6F3"}}
-   >
-    Sign Out{" "}
-   </Button>
+   <SecondaryButton onClick={performLogout}>Sign Out </SecondaryButton>
   </>
  );
 };

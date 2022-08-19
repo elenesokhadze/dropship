@@ -167,23 +167,18 @@ export const SortContainer = styled.div`
 
 export const SortSelect = styled.select`
  font-family: Gilroy-regular;
- color: ${({theme}) => theme.colors.secondary.grey.main};
- font-size: 15px !important;
+ color: ${({theme}) => theme.colors.secondary.grey.main} !important;
+ font-size: 16px;
  font-weight: 400;
  background-color: transparent;
  border: none;
  outline: none;
  font-weight: 500;
  cursor: pointer;
- -webkit-appearance: none;
- -moz-appearance: none;
- appearance: none; /* Remove default arrow */
- width: 180px;
  padding: 20px;
 `;
 
 export const SortOption = styled.option`
  background-color: ${({theme}) => theme.colors.primary.grey.main} !important;
- color: ${({theme}) => theme.colors.secondary.grey.main};
- width: 500px;
+ color: ${({theme}) => theme.colors.secondary.grey.main} !important;
 `;

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { PrimaryButtonContainer } from "./button.styled";
+import { ButtonContainer } from "./button.styled";
 
 export const PrimaryButton: FC<{
     children: JSX.Element,
@@ -7,6 +7,6 @@ export const PrimaryButton: FC<{
     type?: "button" | "submit" | "reset" | undefined
 }> = ({ children, onClick, type }) => {
     return (
-        <PrimaryButtonContainer onClick={onClick} type={type} >{children}</PrimaryButtonContainer>
+        <ButtonContainer onClick={onClick} type={type} >{children}</ButtonContainer>
     )
 };

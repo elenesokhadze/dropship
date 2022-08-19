@@ -50,6 +50,14 @@ export const MenuLogo = styled.img`
  margin-top: 20px;
 `;
 
+export const MenuIconContainer = styled.div`
+ cursor: pointer;
+ color: ${({theme}) => theme.colors.primary.blue.main};
+ &:hover {
+  color: ${({theme}) => theme.colors.secondary.blue.main};
+ }
+`;
+
 export const MenuUserImage = styled.img`
  border: 2px solid ${({theme}) => theme.colors.secondary.blue.main};
  padding: 2px;

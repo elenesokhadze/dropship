@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const PrimaryButtonContainer = styled.button`
+
+export const ButtonContainer = styled.button<{ isSecondary?: boolean }>`
  font-size: 12px;
  text-align: center;
  display: flex;
@@ -9,6 +10,11 @@ export const PrimaryButtonContainer = styled.button`
  cursor: pointer;
  color: ${({ theme }) => theme.colors.primary.white.main};
  background:  ${({ theme }) => theme.colors.primary.blue.main};
+ ${(props) =>
+      props.isSecondary &&
+      `   color:  ${props.theme.colors.primary.white.main};
+      background:   ${props.theme.colors.secondary.blue.main};
+       `}
  min-width: 64px;
  height: 40px;
  width: 160px;
@@ -26,4 +32,6 @@ export const PrimaryButtonContainer = styled.button`
 `;
 
 
-export const SecondaryButtonContainer = styled.div``;
+
+
+

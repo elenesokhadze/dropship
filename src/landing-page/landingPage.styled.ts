@@ -17,7 +17,6 @@ export const LandingHeaderContainer = styled.div`
  z-index: 10;
  width: 100%;
  opacity: 0.7;
- box-sizing: border-box;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   justify-content: space-between;
   padding: 10px 40px;
@@ -124,7 +123,6 @@ export const LandingPageNavItemSignup = styled.button`
  border: solid 2px ${({theme}) => theme.colors.secondary.blue.main};
  transition: all 0.5s;
  cursor: pointer;
- box-sizing: border-box;
  text-decoration: none;
  font-weight: bold;
  font-size: 14px;

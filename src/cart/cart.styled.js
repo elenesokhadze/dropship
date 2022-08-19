@@ -41,7 +41,6 @@ export const CartHeaderContainer = styled.div`
  text-transform: uppercase;
  text-align: center;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
-  box-sizing: border-box;
   justify-content: initial;
   width: 100%;
   gap: 80px;

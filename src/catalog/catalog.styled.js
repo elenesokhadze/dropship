@@ -5,7 +5,6 @@ export const CatalogContainer = styled.div`
  margin-left: 48px;
  margin-top: 16px;
  padding: 0 40px;
- box-sizing: border-box;
  overflow-y: auto;
  max-height: calc(100vh - 240px);
  display: flex;

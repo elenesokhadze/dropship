@@ -12,7 +12,6 @@ export const ModalContainer = styled.div`
  border-radius: 16px;
  padding: 32px 32px 72px 32px;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
-  box-sizing: border-box;
   height: 100vh;
   border-radius: 0;
  }

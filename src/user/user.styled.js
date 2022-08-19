@@ -29,7 +29,6 @@ export const UserHeading = styled.div`
  text-transform: uppercase;
  width: 98%;
  padding: 0 40px;
- box-sizing: border-box;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.tint};
  height: 74px;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {

@@ -4,7 +4,6 @@ export const HeaderOuterContainer = styled.div`
  background-color: ${({theme}) => theme.colors.primary.grey.tint};
  width: calc(100% - 48px);
  margin-left: 48px;
- box-sizing: border-box;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   margin-left: 0;
   width: 100%;
@@ -160,7 +159,6 @@ export const SortContainer = styled.div`
  width: 100%;
  padding: 24px 40px;
  border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.shade};
- box-sizing: border-box;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   justify-content: center;
   padding: 8px 40px;

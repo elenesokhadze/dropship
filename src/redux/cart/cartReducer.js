@@ -3,7 +3,7 @@ export default function cart(state = [], action) {
   case "ADD_TO_CART":
    let unique = true;
    state.forEach((item) => {
-    if (item.product === action.product) {
+    if (item.product.id === action.product.id) {
      unique = false;
      item.count = item.count + 1;
      return item;

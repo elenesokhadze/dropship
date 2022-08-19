@@ -32,6 +32,7 @@ const theme: BaseTheme = {
   secondary: {
    blue: {
     main: "#64c7d0",
+    shade: "#e6f2f2",
    },
    grey: {
     main: "#707070",

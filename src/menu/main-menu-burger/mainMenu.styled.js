@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
 export const MenuContainer = styled.div`
  position: fixed;
@@ -8,6 +9,22 @@ export const MenuContainer = styled.div`
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
   padding-top: 40px;
   width: 80px;
+ }
+`;
+
+export const MenuLink = styled(NavLink)`
+ width: 100%;
+ padding: 8px 0 8px 16px;
+ &.active {
+  padding: 8px 0 8px 12px;
+  background: ${({theme}) => theme.colors.secondary.blue.shade};
+  border-left: 4px solid ${({theme}) => theme.colors.secondary.blue.main};
+ }
+ @media (max-width: ${({theme}) => `${theme.responsive.mobile}px`}) {
+  padding: 8px 0 8px 24px;
+  &.active {
+   padding: 8px 0 8px 20px;
+  }
  }
 `;
 
@@ -27,24 +44,17 @@ export const MenuNav = styled.ul`
  }
 `;
 
-export const MenuItemCircled = styled.li`
- border: 2px solid ${({theme}) => theme.colors.secondary.blue.main};
- border-radius: 50%;
- display: flex;
- justify-content: center;
- align-items: center;
- padding: 2px;
-`;
-
 export const MenuLogo = styled.img`
  height: 20px;
  width: 40px;
- border-bottom: 2px solid ${({theme}) => theme.colors.primary.grey.main};
- padding: 20px 5px;
+ margin-top: 20px;
 `;
 
 export const MenuUserImage = styled.img`
+ border: 2px solid ${({theme}) => theme.colors.secondary.blue.main};
+ padding: 2px;
  border-radius: 50%;
- height: 24px;
- width: 24px;
+ height: 32px;
+ width: 32px;
+ margin-left: -4px;
 `;

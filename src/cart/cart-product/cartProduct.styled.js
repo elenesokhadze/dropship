@@ -13,7 +13,6 @@ export const CartProductContainer = styled.div`
  padding-left: 2%;
  min-height: 240px;
  @media (max-width: ${({theme}) => `${theme.responsive.tablet}px`}) {
-  box-sizing: border-box;
   justify-content: initial;
   width: 100%;
   gap: 80px;

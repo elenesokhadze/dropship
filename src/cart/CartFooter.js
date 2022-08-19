@@ -9,11 +9,12 @@ import {PrimaryButton} from "../button/PrimaryButton";
 
 export const CartFooter = () => {
  const cart = useSelector((state) => state.cart);
- let total = 0;
 
- cart.forEach((item) => {
-  total += item.product.price * item.count;
- });
+ let total = cart.reduce(
+  (currentTotal, item) => currentTotal + item.product.price * item.count,
+  0
+ );
+
  let finalTotal = Math.round(total * 100) / 100;
  return (
   <CartFooterContainer id="CartFooterContainer">
